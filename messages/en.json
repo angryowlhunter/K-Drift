@@ -1,0 +1,178 @@
+{
+  "meta": {
+    "title": "K-Drift — Life in Korea, in your language",
+    "description": "A multilingual newsletter for foreigners living in Korea. Trustworthy info on visa, healthcare, housing, work, and daily life."
+  },
+  "nav": {
+    "home": "Home",
+    "articles": "Guides",
+    "newsletter": "Newsletter",
+    "about": "About"
+  },
+  "hero": {
+    "badge": "Weekly · Free · Vietnamese / English / Korean",
+    "title": "Life in Korea, in your language",
+    "subtitle": "Visa, hospitals, finding a home, jobs, paperwork — the essentials of living in Korea, clearly explained and delivered to your inbox every week.",
+    "emailPlaceholder": "Email address",
+    "cta": "Subscribe for free",
+    "privacy": "Unsubscribe anytime. We never send spam."
+  },
+  "socialProof": {
+    "title": "Trusted by people already navigating life in Korea",
+    "youtube": "YouTube subscribers",
+    "tiktok": "TikTok followers",
+    "subscribers": "Newsletter readers"
+  },
+  "categories": {
+    "title": "Here's what you'll get",
+    "subtitle": "We cover the five essentials of living in Korea.",
+    "visa": {
+      "name": "Visa & Stay",
+      "desc": "Visa types, extensions, ARC, permanent residency"
+    },
+    "medical": {
+      "name": "Healthcare",
+      "desc": "National health insurance, clinics, emergencies"
+    },
+    "housing": {
+      "name": "Housing",
+      "desc": "Jeonse/wolse contracts, deposits, avoiding scams"
+    },
+    "labor": {
+      "name": "Work & Jobs",
+      "desc": "Employment contracts, unpaid wages, insurances"
+    },
+    "education": {
+      "name": "Daily Life",
+      "desc": "Korean language, banking, telecom, admin tasks"
+    }
+  },
+  "testimonial": {
+    "quote": "Visa paperwork info was all over the place and so confusing. I really needed one source I could trust.",
+    "author": "Nguyen, 4 years in Korea"
+  },
+  "finalCta": {
+    "title": "Starting next week, no more confusion",
+    "subtitle": "Just leave your email and get clear, useful info about life in Korea every week.",
+    "cta": "Subscribe for free"
+  },
+  "subscribe": {
+    "success": "You're in! Check your inbox for a welcome email.",
+    "invalid": "Please enter a valid email address.",
+    "already": "This email is already subscribed.",
+    "error": "Something went wrong. Please try again shortly."
+  },
+  "articles": {
+    "title": "Living in Korea — Guides",
+    "subtitle": "Visa, healthcare, housing, work, and daily life — the essentials in one place.",
+    "searchPlaceholder": "Search (e.g. deposit, health insurance)",
+    "all": "All",
+    "empty": "No guides match your filters.",
+    "readMore": "Read more",
+    "resultsCount": "{count} guides"
+  },
+  "article": {
+    "backToList": "← All guides",
+    "tableOfContents": "Contents",
+    "availableIn": "Read in another language",
+    "fallbackNote": "This guide isn't translated into your language yet, so it's shown in another language.",
+    "ctaTitle": "Get guides like this every week",
+    "ctaSubtitle": "Just leave your email and we'll send the essentials of life in Korea."
+  },
+  "newsletter": {
+    "title": "Past newsletters",
+    "subtitle": "Re-read the weekly guides to life in Korea we've sent.",
+    "empty": "No newsletters have been sent yet.",
+    "issueLabel": "Issue #{number}",
+    "inThisIssue": "In this issue",
+    "backToArchive": "← All newsletters",
+    "subscribePrompt": "Get the next issue in your inbox."
+  },
+  "about": {
+    "title": "About K-Drift",
+    "lead": "Life in Korea, in your language.",
+    "p1": "K-Drift is a multilingual living-info platform for foreigners in Korea. We deliver the essentials — visa, healthcare, housing, work, education — in Vietnamese, English, and Korean, in a way you can trust.",
+    "p2": "Over 90% of life information in Korea is available only in Korean. Drawing on seven years of making content about life in Korea, we re-explain complex administrative information at a level that makes sense for foreigners.",
+    "p3": "We start with a newsletter and grow, together with you, into a trustworthy living-info portal."
+  },
+  "footer": {
+    "tagline": "Life in Korea, in your language.",
+    "rights": "K-Drift"
+  },
+  "heroTrust": {
+    "official": "Based on official government sources",
+    "review": "Reviewed by humans",
+    "free": "Free · Unsubscribe anytime"
+  },
+  "trustBar": {
+    "label": "We only cover announcements from official sources",
+    "s1": "Ministry of Justice",
+    "s2": "Ministry of Employment and Labor",
+    "s3": "National Health Insurance Service",
+    "s4": "Korea Immigration Service",
+    "s5": "Ministry of Land & Transport"
+  },
+  "howItWorks": {
+    "title": "How we make it",
+    "subtitle": "Three steps to deliver only information you can trust",
+    "step1": {
+      "title": "Collect official announcements",
+      "desc": "Every week we gather updates from official government channels like the Ministry of Justice and Ministry of Employment and Labor."
+    },
+    "step2": {
+      "title": "Summarize and review",
+      "desc": "AI drafts the summary, and our editors verify every item before it is published."
+    },
+    "step3": {
+      "title": "In your language",
+      "desc": "Translated into Vietnamese, English, and Korean — delivered to your inbox once a week."
+    }
+  },
+  "latest": {
+    "title": "Latest updates",
+    "subtitle": "The most recently published articles.",
+    "viewAll": "View all articles"
+  },
+  "testimonials": {
+    "title": "What subscribers say",
+    "t1": {
+      "quote": "Visa paperwork info was so scattered and confusing. I really needed one place I could trust.",
+      "author": "Nguyen · 4 years in Korea"
+    },
+    "t2": {
+      "quote": "The deposit-contract checklist from this newsletter helped me avoid a rental scam.",
+      "author": "Linh · Student, 2nd year"
+    },
+    "t3": {
+      "quote": "I used to run every Korean notice through a translator. Now it arrives already organized in Vietnamese.",
+      "author": "Tuan · Office worker, 3rd year"
+    }
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "q1": {
+      "q": "Is it really free?",
+      "a": "Yes. The newsletter and everything on this site are completely free."
+    },
+    "q2": {
+      "q": "Which languages are available?",
+      "a": "Vietnamese, English, or Korean — you receive it in the language you were viewing when you subscribed, and you can switch anytime on the site."
+    },
+    "q3": {
+      "q": "How often will I get emails?",
+      "a": "Once a week, with only the essentials you need to know. No spam."
+    },
+    "q4": {
+      "q": "How do I unsubscribe?",
+      "a": "Click the unsubscribe link at the bottom of any email. It works instantly, no login required."
+    }
+  },
+  "unsubscribe": {
+    "title": "You have been unsubscribed",
+    "desc": "You will no longer receive our newsletter. Thank you for having been with us.",
+    "resub": "You are welcome back anytime.",
+    "home": "Go to homepage",
+    "errorTitle": "Unsubscribe failed",
+    "errorDesc": "The link is invalid or expired. Please try again using the link at the bottom of our email."
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "meta": {
+    "title": "K-Drift — Cuộc sống ở Hàn Quốc, bằng ngôn ngữ của bạn",
+    "description": "Bản tin đa ngôn ngữ cho người nước ngoài sống tại Hàn Quốc. Thông tin đáng tin cậy về visa, y tế, nhà ở, việc làm và đời sống."
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "articles": "Cẩm nang",
+    "newsletter": "Bản tin",
+    "about": "Giới thiệu"
+  },
+  "hero": {
+    "badge": "Hàng tuần · Miễn phí · Tiếng Việt / Anh / Hàn",
+    "title": "Cuộc sống ở Hàn Quốc, bằng ngôn ngữ của bạn",
+    "subtitle": "Visa, bệnh viện, tìm nhà, việc làm, thủ tục hành chính — những điều cần thiết khi sống ở Hàn Quốc, được giải thích rõ ràng và gửi đến hộp thư của bạn mỗi tuần.",
+    "emailPlaceholder": "Địa chỉ email",
+    "cta": "Đăng ký miễn phí",
+    "privacy": "Hủy đăng ký bất cứ lúc nào. Chúng tôi không gửi thư rác."
+  },
+  "socialProof": {
+    "title": "Được tin tưởng bởi những người đang sống tại Hàn Quốc",
+    "youtube": "Người đăng ký YouTube",
+    "tiktok": "Người theo dõi TikTok",
+    "subscribers": "Người đọc bản tin"
+  },
+  "categories": {
+    "title": "Bạn sẽ nhận được những thông tin này",
+    "subtitle": "Chúng tôi đề cập đến năm chủ đề thiết yếu của cuộc sống ở Hàn Quốc.",
+    "visa": {
+      "name": "Visa & Cư trú",
+      "desc": "Loại visa, gia hạn, thẻ cư trú (ARC), thường trú"
+    },
+    "medical": {
+      "name": "Y tế & Bảo hiểm",
+      "desc": "Bảo hiểm y tế quốc gia, khám bệnh, cấp cứu"
+    },
+    "housing": {
+      "name": "Nhà ở",
+      "desc": "Hợp đồng jeonse/wolse, tiền cọc, tránh lừa đảo"
+    },
+    "labor": {
+      "name": "Việc làm",
+      "desc": "Hợp đồng lao động, nợ lương, bảo hiểm"
+    },
+    "education": {
+      "name": "Đời sống",
+      "desc": "Tiếng Hàn, ngân hàng, viễn thông, thủ tục"
+    }
+  },
+  "testimonial": {
+    "quote": "Thông tin về giấy tờ visa mỗi nơi một kiểu, rất rối. Tôi thực sự cần một nguồn đáng tin cậy.",
+    "author": "Nguyễn, 4 năm tại Hàn Quốc"
+  },
+  "finalCta": {
+    "title": "Từ tuần sau, không còn bối rối",
+    "subtitle": "Chỉ cần để lại email và nhận thông tin hữu ích, rõ ràng về cuộc sống ở Hàn Quốc mỗi tuần.",
+    "cta": "Đăng ký miễn phí"
+  },
+  "subscribe": {
+    "success": "Đăng ký thành công! Vui lòng kiểm tra email chào mừng.",
+    "invalid": "Vui lòng nhập địa chỉ email hợp lệ.",
+    "already": "Email này đã được đăng ký.",
+    "error": "Đã xảy ra lỗi. Vui lòng thử lại sau giây lát."
+  },
+  "articles": {
+    "title": "Cẩm nang sống ở Hàn Quốc",
+    "subtitle": "Visa, y tế, nhà ở, việc làm và đời sống — những điều thiết yếu ở một nơi.",
+    "searchPlaceholder": "Tìm kiếm (vd: tiền cọc, bảo hiểm y tế)",
+    "all": "Tất cả",
+    "empty": "Không có bài viết nào phù hợp.",
+    "readMore": "Xem thêm",
+    "resultsCount": "{count} bài viết"
+  },
+  "article": {
+    "backToList": "← Tất cả cẩm nang",
+    "tableOfContents": "Mục lục",
+    "availableIn": "Đọc bằng ngôn ngữ khác",
+    "fallbackNote": "Bài này chưa được dịch sang ngôn ngữ của bạn nên đang hiển thị bằng ngôn ngữ khác.",
+    "ctaTitle": "Nhận cẩm nang như thế này mỗi tuần",
+    "ctaSubtitle": "Chỉ cần để lại email, chúng tôi sẽ gửi những điều thiết yếu về cuộc sống ở Hàn Quốc."
+  },
+  "newsletter": {
+    "title": "Bản tin đã gửi",
+    "subtitle": "Đọc lại các cẩm nang hàng tuần về cuộc sống ở Hàn Quốc.",
+    "empty": "Chưa có bản tin nào được gửi.",
+    "issueLabel": "Số #{number}",
+    "inThisIssue": "Trong số này",
+    "backToArchive": "← Tất cả bản tin",
+    "subscribePrompt": "Nhận số tiếp theo qua email của bạn."
+  },
+  "about": {
+    "title": "Giới thiệu K-Drift",
+    "lead": "Cuộc sống ở Hàn Quốc, bằng ngôn ngữ của bạn.",
+    "p1": "K-Drift là nền tảng thông tin đời sống đa ngôn ngữ cho người nước ngoài ở Hàn Quốc. Chúng tôi cung cấp những điều thiết yếu — visa, y tế, nhà ở, việc làm, giáo dục — bằng tiếng Việt, tiếng Anh và tiếng Hàn, một cách đáng tin cậy.",
+    "p2": "Hơn 90% thông tin đời sống ở Hàn Quốc chỉ có bằng tiếng Hàn. Với bảy năm kinh nghiệm làm nội dung về cuộc sống ở Hàn, chúng tôi giải thích lại thông tin hành chính phức tạp theo cách phù hợp với người nước ngoài.",
+    "p3": "Chúng tôi bắt đầu bằng bản tin và cùng bạn phát triển thành một cổng thông tin đời sống đáng tin cậy."
+  },
+  "footer": {
+    "tagline": "Cuộc sống ở Hàn Quốc, bằng ngôn ngữ của bạn.",
+    "rights": "K-Drift"
+  },
+  "heroTrust": {
+    "official": "Dựa trên nguồn chính thức của chính phủ",
+    "review": "Được con người kiểm duyệt",
+    "free": "Miễn phí · Hủy bất cứ lúc nào"
+  },
+  "trustBar": {
+    "label": "Chúng tôi chỉ đưa tin từ các nguồn chính thức",
+    "s1": "Bộ Tư pháp",
+    "s2": "Bộ Lao động và Việc làm",
+    "s3": "Cơ quan Bảo hiểm Y tế Quốc gia",
+    "s4": "Cục Xuất nhập cảnh Hàn Quốc",
+    "s5": "Bộ Đất đai & Giao thông"
+  },
+  "howItWorks": {
+    "title": "Cách chúng tôi thực hiện",
+    "subtitle": "3 bước để chỉ mang đến thông tin đáng tin cậy",
+    "step1": {
+      "title": "Thu thập thông báo chính thức",
+      "desc": "Mỗi tuần chúng tôi tổng hợp tin mới từ các kênh chính thức như Bộ Tư pháp, Bộ Lao động và Việc làm."
+    },
+    "step2": {
+      "title": "Tóm tắt và kiểm duyệt",
+      "desc": "AI soạn bản nháp, đội ngũ biên tập kiểm tra từng mục trước khi đăng."
+    },
+    "step3": {
+      "title": "Bằng ngôn ngữ của bạn",
+      "desc": "Được dịch sang tiếng Việt, tiếng Anh và tiếng Hàn — gửi đến hộp thư của bạn mỗi tuần một lần."
+    }
+  },
+  "latest": {
+    "title": "Thông tin mới nhất",
+    "subtitle": "Các bài viết được đăng gần đây nhất.",
+    "viewAll": "Xem tất cả bài viết"
+  },
+  "testimonials": {
+    "title": "Người đăng ký nói gì",
+    "t1": {
+      "quote": "Thông tin giấy tờ visa quá rối và mỗi nơi nói một kiểu. Tôi thực sự cần một nơi đáng tin cậy.",
+      "author": "Nguyên · 4 năm ở Hàn Quốc"
+    },
+    "t2": {
+      "quote": "Nhờ checklist hợp đồng tiền cọc trong bản tin này mà tôi tránh được lừa đảo thuê nhà.",
+      "author": "Linh · Du học sinh năm 2"
+    },
+    "t3": {
+      "quote": "Trước đây tôi phải dịch từng thông báo tiếng Hàn. Giờ mọi thứ được tổng hợp sẵn bằng tiếng Việt.",
+      "author": "Tuấn · Nhân viên văn phòng năm 3"
+    }
+  },
+  "faq": {
+    "title": "Câu hỏi thường gặp",
+    "q1": {
+      "q": "Có thật sự miễn phí không?",
+      "a": "Có. Bản tin và toàn bộ thông tin trên trang đều hoàn toàn miễn phí."
+    },
+    "q2": {
+      "q": "Có những ngôn ngữ nào?",
+      "a": "Tiếng Việt, tiếng Anh hoặc tiếng Hàn — bạn sẽ nhận theo ngôn ngữ đang xem khi đăng ký, và có thể đổi bất cứ lúc nào trên trang."
+    },
+    "q3": {
+      "q": "Bao lâu nhận được email một lần?",
+      "a": "Mỗi tuần một lần, chỉ những thông tin quan trọng bạn cần biết. Không spam."
+    },
+    "q4": {
+      "q": "Hủy đăng ký như thế nào?",
+      "a": "Nhấn vào liên kết hủy đăng ký ở cuối bất kỳ email nào. Có hiệu lực ngay, không cần đăng nhập."
+    }
+  },
+  "unsubscribe": {
+    "title": "Bạn đã hủy đăng ký",
+    "desc": "Bạn sẽ không nhận bản tin nữa. Cảm ơn bạn đã đồng hành cùng chúng tôi.",
+    "resub": "Chúng tôi luôn chào đón bạn quay lại.",
+    "home": "Về trang chủ",
+    "errorTitle": "Hủy đăng ký thất bại",
+    "errorDesc": "Liên kết không hợp lệ hoặc đã hết hạn. Vui lòng thử lại bằng liên kết ở cuối email của chúng tôi."
+  }
+}
