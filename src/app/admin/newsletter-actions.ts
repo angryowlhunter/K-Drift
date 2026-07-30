@@ -116,6 +116,7 @@ export async function sendNewsletterAction(_prev: SendResult, formData: FormData
 
   revalidatePath("/admin/newsletter");
   revalidatePath("/[locale]/newsletter", "page");
+  revalidatePath("/[locale]/newsletter/[issueNo]", "page");
   return { ok: true, sent: recipients.length };
 }
 

@@ -32,18 +32,17 @@ export async function getIssues(locale: Locale): Promise<NewsletterIssue[]> {
       .eq("locale", locale)
       .not("sent_at", "is", null)
       .order("sent_at", { ascending: false });
-    if (data && data.length > 0) {
-      return Promise.all(
-        data.map(async (row) => ({
-          issueNo: row.issue_no ?? 0,
-          subject: row.subject,
-          sentAt: row.sent_at ?? "",
-          articles: await hydrateArticlesByIds(row.article_ids ?? [], locale),
-        })),
-      );
-    }
+    // Real data only — an empty archive stays empty (no sample issues in production).
+    return Promise.all(
+      (data ?? []).map(async (row) => ({
+        issueNo: row.issue_no ?? 0,
+        subject: row.subject,
+        sentAt: row.sent_at ?? "",
+        articles: await hydrateArticlesByIds(row.article_ids ?? [], locale),
+      })),
+    );
   }
-  // Seed fallback
+  // Seed fallback (dev only, when Supabase is not configured)
   return Promise.all(
     SEED_NEWSLETTER.map(async (n) => ({
       issueNo: n.issueNo,
