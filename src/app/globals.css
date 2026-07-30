@@ -24,6 +24,10 @@
   --primary: oklch(0.52 0.2 262);
   --primary-foreground: oklch(0.99 0.004 240);
 
+  /* Warm coral — CTA/highlight accent against the indigo base */
+  --cta: oklch(0.68 0.19 35);
+  --cta-foreground: oklch(0.99 0.004 240);
+
   --accent: oklch(0.7 0.16 50);
   --accent-foreground: oklch(0.21 0.02 250);
 
@@ -67,6 +71,8 @@
   --color-ring: var(--ring);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-cta: var(--cta);
+  --color-cta-foreground: var(--cta-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-success: var(--success);
@@ -110,6 +116,19 @@ body {
   line-height: 1.15;
   letter-spacing: -0.025em;
   font-weight: 700;
+}
+
+/* Indigo → violet → coral gradient text (hero accent line) */
+.text-gradient-brand {
+  background: linear-gradient(
+    92deg,
+    oklch(0.45 0.21 275) 8%,
+    oklch(0.54 0.22 292) 52%,
+    oklch(0.66 0.2 35) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /* ── Scroll reveal (used by <Reveal/>) ──────────────────────────────── */

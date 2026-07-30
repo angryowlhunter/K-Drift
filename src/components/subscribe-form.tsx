@@ -84,7 +84,7 @@ export function SubscribeForm({
         <button
           type="submit"
           disabled={status === "loading"}
-          className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-primary px-6 text-sm font-semibold text-primary-foreground transition hover:opacity-90 disabled:opacity-60"
+          className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-cta px-6 text-sm font-bold text-cta-foreground shadow-lg shadow-cta/30 transition hover:brightness-105 disabled:opacity-60"
         >
           {status === "loading" ? (
             <Loader2 className="size-4 animate-spin" />

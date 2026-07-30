@@ -69,11 +69,18 @@ export default async function LandingPage({
 
   const sourceItems = (["s1", "s2", "s3", "s4", "s5"] as const).map((k) => tb(k));
 
+  // Split the hero title at its first comma so the second line gets the brand gradient.
+  const heroTitle = t("title");
+  const commaIdx = heroTitle.indexOf(",");
+  const titleTop = commaIdx > -1 ? heroTitle.slice(0, commaIdx + 1) : heroTitle;
+  const titleAccent = commaIdx > -1 ? heroTitle.slice(commaIdx + 1).trim() : null;
+
   return (
     <>
       {/* Hero — copy left, live newsletter mockup right */}
       <section className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(75%_60%_at_50%_0%,oklch(0.52_0.2_262/0.14),transparent)]" />
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(75%_60%_at_50%_0%,oklch(0.52_0.2_262/0.13),transparent)]" />
+        <div className="pointer-events-none absolute -z-10 top-[40%] right-[-8%] h-[420px] w-[540px] rounded-full bg-[radial-gradient(closest-side,oklch(0.68_0.19_35/0.1),transparent_70%)]" />
         <div className="hero-grid pointer-events-none absolute inset-0 -z-10" />
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-4 pt-16 pb-16 sm:px-6 sm:pt-24 lg:grid-cols-[1fr_420px] lg:gap-16">
           <div className="text-center lg:text-left">
@@ -84,7 +91,17 @@ export default async function LandingPage({
               </span>
             </Reveal>
             <Reveal delay={80}>
-              <h1 className="text-display mt-7 text-balance">{t("title")}</h1>
+              <h1 className="text-display mt-7 text-balance">
+                {titleAccent ? (
+                  <>
+                    {titleTop}
+                    <br />
+                    <span className="text-gradient-brand">{titleAccent}</span>
+                  </>
+                ) : (
+                  heroTitle
+                )}
+              </h1>
             </Reveal>
             <Reveal delay={160}>
               <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground text-pretty lg:mx-0">
