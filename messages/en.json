@@ -175,5 +175,10 @@
     "home": "Go to homepage",
     "errorTitle": "Unsubscribe failed",
     "errorDesc": "The link is invalid or expired. Please try again using the link at the bottom of our email."
+  },
+  "youtube": {
+    "title": "Meet us on video first",
+    "subtitle": "Made by the HanQuocBros channel trusted by 106K on YouTube and 400K on TikTok.",
+    "channel": "Visit the channel"
   }
 }

@@ -175,5 +175,10 @@
     "home": "Về trang chủ",
     "errorTitle": "Hủy đăng ký thất bại",
     "errorDesc": "Liên kết không hợp lệ hoặc đã hết hạn. Vui lòng thử lại bằng liên kết ở cuối email của chúng tôi."
+  },
+  "youtube": {
+    "title": "Gặp chúng tôi qua video trước",
+    "subtitle": "Được thực hiện bởi kênh HanQuocBros — 106K trên YouTube và 400K trên TikTok tin tưởng.",
+    "channel": "Xem kênh"
   }
 }
