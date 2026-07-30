@@ -102,6 +102,10 @@ export async function saveArticleAction(
 
   revalidatePath("/admin");
   revalidatePath("/[locale]/articles", "page");
+  // Also refresh the article's own (possibly pre-rendered 404) detail page and the
+  // landing page's "latest articles" section, in every locale.
+  revalidatePath(`/[locale]/articles/[slug]`, "page");
+  revalidatePath("/[locale]", "page");
 
   // Save & keep editing: a brand-new article redirects to its own edit URL so it
   // gains an id; existing articles stay put and just show a "saved" indicator.
@@ -114,6 +118,9 @@ export async function deleteArticleAction(id: string) {
   const supabase = createAdminClient();
   await supabase.from("articles").delete().eq("id", id);
   revalidatePath("/admin");
+  revalidatePath("/[locale]/articles", "page");
+  revalidatePath(`/[locale]/articles/[slug]`, "page");
+  revalidatePath("/[locale]", "page");
   redirect("/admin");
 }
 
