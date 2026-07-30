@@ -17,7 +17,7 @@ export default async function DigestPage() {
     digestCounts(),
   ]);
 
-  const rssSources = sources.filter((s) => s.type === "rss" && s.enabled);
+  const rssSources = sources.filter((s) => s.type !== "manual" && s.enabled);
 
   return (
     <>

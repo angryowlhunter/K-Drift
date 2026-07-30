@@ -34,6 +34,101 @@ export async function ingestManualAction(_prev: ActionResult, form: FormData): P
   return { ok: true, info: "수집 완료 — 아래에서 'AI 요약'을 실행하세요." };
 }
 
+/** Dispatch ingestion by source type (rss / api). Used by the collect buttons. */
+export async function ingestSourceAction(sourceId: string): Promise<ActionResult> {
+  await requireUser();
+  const supabase = createAdminClient();
+  const { data: src } = await supabase.from("sources").select("id,type").eq("id", sourceId).maybeSingle();
+  if (!src) return { ok: false, error: "소스를 찾을 수 없습니다." };
+  if (src.type === "api") return ingestPolicyNewsAction(sourceId);
+  return ingestRssAction(sourceId);
+}
+
+// ─── 정책브리핑 정책뉴스 API (korea.kr RSS 중단에 따른 공식 대체) ─────────────
+// data.go.kr "문화체육관광부_정책브리핑_정책뉴스_API" — env POLICY_NEWS_API_KEY 필요.
+
+type PolicyNewsItem = { id: string; title: string; url: string; content: string };
+
+function pickTag(block: string, tag: string): string {
+  const m = block.match(new RegExp(`<${tag}[^>]*>([\\s\\S]*?)</${tag}>`, "i"));
+  if (!m) return "";
+  return m[1]
+    .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function fmtDate(d: Date): string {
+  const p = (n: number) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}${p(d.getMonth() + 1)}${p(d.getDate())}`;
+}
+
+/** Pull recent policy news from the data.go.kr API and store new items (deduped by hash). */
+export async function ingestPolicyNewsAction(sourceId: string): Promise<ActionResult> {
+  await requireUser();
+  const rawKey = process.env.POLICY_NEWS_API_KEY;
+  if (!rawKey) {
+    return {
+      ok: false,
+      error:
+        "POLICY_NEWS_API_KEY가 없습니다. 공공데이터포털(data.go.kr)에서 '정책브리핑 정책뉴스 API' 활용신청 후 발급받은 인증키를 Vercel 환경변수에 추가하세요.",
+    };
+  }
+  // data.go.kr issues both encoded/decoded keys; use as-is when already percent-encoded.
+  const serviceKey = rawKey.includes("%") ? rawKey : encodeURIComponent(rawKey);
+
+  const supabase = createAdminClient();
+  const { data: src } = await supabase.from("sources").select("id,url").eq("id", sourceId).maybeSingle();
+  if (!src?.url) return { ok: false, error: "API URL이 없는 소스입니다." };
+
+  const end = new Date();
+  const start = new Date(end.getTime() - 7 * 24 * 3600 * 1000); // last 7 days
+  const url = `${src.url}?serviceKey=${serviceKey}&pageNo=1&numOfRows=30&startDate=${fmtDate(start)}&endDate=${fmtDate(end)}`;
+
+  let xml: string;
+  try {
+    const res = await fetch(url, { headers: { accept: "application/xml" } });
+    xml = await res.text();
+    if (!res.ok) return { ok: false, error: `API 요청 실패: HTTP ${res.status}` };
+  } catch (e) {
+    return { ok: false, error: `API 요청 실패: ${e instanceof Error ? e.message : String(e)}` };
+  }
+
+  // data.go.kr error responses come as XML with a message field.
+  const apiErr = pickTag(xml, "returnAuthMsg") || pickTag(xml, "errMsg");
+  if (apiErr && !/normal/i.test(apiErr)) {
+    return { ok: false, error: `API 오류: ${apiErr} (인증키 등록/승인 상태를 확인하세요)` };
+  }
+
+  const blocks = xml.match(/<NewsItem[\s\S]*?<\/NewsItem>/gi) ?? [];
+  const items: PolicyNewsItem[] = blocks.map((b) => ({
+    id: pickTag(b, "NewsItemId"),
+    title: pickTag(b, "Title"),
+    url: pickTag(b, "OriginalUrl"),
+    content: [pickTag(b, "SubTitle1"), pickTag(b, "DataContents")].filter(Boolean).join("\n\n").slice(0, 6000),
+  }));
+  if (items.length === 0) return { ok: false, error: "최근 7일간 새 정책뉴스가 없거나 응답 형식이 다릅니다." };
+
+  let added = 0;
+  for (const it of items) {
+    const hash = hashOf(it.id || it.url || it.title);
+    const { error } = await supabase.from("raw_items").insert({
+      source_id: src.id,
+      external_id: it.id || null,
+      url: it.url || null,
+      title: it.title || null,
+      content: it.content || it.title,
+      hash,
+    });
+    if (!error) added++;
+  }
+  revalidatePath("/admin/digest");
+  return { ok: true, info: `${added}건 새로 수집 (중복 ${items.length - added}건 건너뜀).` };
+}
+
 /** Pull an RSS source and store new items (deduped by hash). */
 export async function ingestRssAction(sourceId: string): Promise<ActionResult> {
   await requireUser();

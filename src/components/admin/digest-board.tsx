@@ -2,10 +2,10 @@
 
 import { useActionState, useState, useTransition } from "react";
 import { useFormStatus } from "react-dom";
-import { Loader2, Rss, Sparkles, Check, X, ChevronDown } from "lucide-react";
+import { Loader2, Rss, Landmark, Sparkles, Check, X, ChevronDown } from "lucide-react";
 import {
   ingestManualAction,
-  ingestRssAction,
+  ingestSourceAction,
   curateRawItemAction,
   approveDigestAction,
   rejectDigestAction,
@@ -102,9 +102,9 @@ function RssPanel({ sources, onDone }: { sources: Source[]; onDone: (msg: string
   const [pending, start] = useTransition();
   return (
     <div className="rounded-xl border border-border bg-card p-4">
-      <p className="text-sm font-medium">RSS 수집</p>
+      <p className="text-sm font-medium">공식 채널 수집</p>
       {sources.length === 0 ? (
-        <p className="mt-2 text-xs text-muted-foreground">활성 RSS 소스가 없습니다.</p>
+        <p className="mt-2 text-xs text-muted-foreground">활성 수집 소스가 없습니다.</p>
       ) : (
         <div className="mt-3 space-y-2">
           {sources.map((s) => (
@@ -114,13 +114,19 @@ function RssPanel({ sources, onDone }: { sources: Source[]; onDone: (msg: string
               disabled={pending}
               onClick={() =>
                 start(async () => {
-                  const r = await ingestRssAction(s.id);
+                  const r = await ingestSourceAction(s.id);
                   onDone(r.ok ? `[${s.name}] ${r.info}` : `[${s.name}] ${r.error}`);
                 })
               }
               className="inline-flex w-full items-center gap-2 rounded-lg border border-border px-3 py-2 text-sm hover:bg-muted/40 disabled:opacity-60"
             >
-              {pending ? <Loader2 className="size-4 animate-spin" /> : <Rss className="size-4 text-primary" />}
+              {pending ? (
+                <Loader2 className="size-4 animate-spin" />
+              ) : s.type === "api" ? (
+                <Landmark className="size-4 text-primary" />
+              ) : (
+                <Rss className="size-4 text-primary" />
+              )}
               {s.name}에서 수집
             </button>
           ))}
