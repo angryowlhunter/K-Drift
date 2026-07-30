@@ -10,6 +10,7 @@ import {
   Quote,
   ArrowRight,
   MonitorPlay,
+  Mail,
 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
@@ -19,7 +20,7 @@ import { Reveal } from "@/components/reveal";
 import { CountUp } from "@/components/count-up";
 import { YouTubeLite } from "@/components/youtube-lite";
 import { CATEGORY_KEYS, CATEGORY_META } from "@/lib/categories";
-import { getArticles } from "@/lib/articles";
+import { getArticles, type Article } from "@/lib/articles";
 import { getSubscriberCount } from "@/lib/stats";
 
 // Real channel reach from the business plan.
@@ -58,6 +59,8 @@ export default async function LandingPage({
   const tq = await getTranslations("faq");
   const tf = await getTranslations("finalCta");
   const ty = await getTranslations("youtube");
+  const tmeta = await getTranslations("meta");
+  const tart = await getTranslations("articles");
 
   const [subscriberCount, latestArticles] = await Promise.all([
     getSubscriberCount(),
@@ -68,93 +71,105 @@ export default async function LandingPage({
 
   return (
     <>
-      {/* Hero */}
+      {/* Hero — copy left, live newsletter mockup right */}
       <section className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(75%_60%_at_50%_0%,oklch(0.52_0.2_262/0.13),transparent)]" />
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(75%_60%_at_50%_0%,oklch(0.52_0.2_262/0.14),transparent)]" />
         <div className="hero-grid pointer-events-none absolute inset-0 -z-10" />
-        <div className="mx-auto max-w-4xl px-4 pt-20 pb-16 text-center sm:px-6 sm:pt-28 sm:pb-20">
-          <Reveal>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-semibold text-muted-foreground shadow-sm">
-              <Sparkles className="size-3.5 text-primary" />
-              {t("badge")}
-            </span>
-          </Reveal>
-          <Reveal delay={80}>
-            <h1 className="text-display mx-auto mt-7 max-w-3xl text-balance">{t("title")}</h1>
-          </Reveal>
-          <Reveal delay={160}>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground text-pretty sm:text-xl">
-              {t("subtitle")}
-            </p>
-          </Reveal>
-          <Reveal delay={240}>
-            <div className="mx-auto mt-9 max-w-lg" id="subscribe">
-              <SubscribeForm source="hero" />
-            </div>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2.5 text-xs font-medium text-muted-foreground">
-              <span className="inline-flex items-center gap-1.5">
-                <Landmark className="size-3.5 text-primary" />
-                {tht("official")}
+        <div className="mx-auto grid max-w-6xl items-center gap-14 px-4 pt-16 pb-16 sm:px-6 sm:pt-24 lg:grid-cols-[1fr_420px] lg:gap-16">
+          <div className="text-center lg:text-left">
+            <Reveal>
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-semibold text-muted-foreground shadow-sm">
+                <Sparkles className="size-3.5 text-primary" />
+                {t("badge")}
               </span>
-              <span className="inline-flex items-center gap-1.5">
-                <UserCheck className="size-3.5 text-primary" />
-                {tht("review")}
-              </span>
-              <span className="inline-flex items-center gap-1.5">
-                <ShieldCheck className="size-3.5 text-primary" />
-                {tht("free")}
-              </span>
-            </div>
+            </Reveal>
+            <Reveal delay={80}>
+              <h1 className="text-display mt-7 text-balance">{t("title")}</h1>
+            </Reveal>
+            <Reveal delay={160}>
+              <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground text-pretty lg:mx-0">
+                {t("subtitle")}
+              </p>
+            </Reveal>
+            <Reveal delay={240}>
+              <div className="mx-auto mt-8 max-w-lg lg:mx-0" id="subscribe">
+                <SubscribeForm source="hero" />
+              </div>
+              <div className="mt-7 flex flex-wrap items-center justify-center gap-x-6 gap-y-2.5 text-xs font-medium text-muted-foreground lg:justify-start">
+                <span className="inline-flex items-center gap-1.5">
+                  <Landmark className="size-3.5 text-primary" />
+                  {tht("official")}
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <UserCheck className="size-3.5 text-primary" />
+                  {tht("review")}
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <ShieldCheck className="size-3.5 text-primary" />
+                  {tht("free")}
+                </span>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Newsletter mockup — the "product shot", built from real latest articles */}
+          <Reveal delay={200} className="hidden lg:block">
+            <NewsletterMockup
+              subject={tmeta("title")}
+              badge={t("badge")}
+              readLabel={tart("readMore")}
+              articles={latestArticles.slice(0, 2)}
+            />
           </Reveal>
         </div>
       </section>
 
-      {/* Official-source marquee */}
-      <section className="border-y border-border bg-muted/40 py-8">
+      {/* Official sources — static badges */}
+      <section className="border-y border-border bg-muted/40 py-9">
         <p className="text-center text-xs font-semibold uppercase tracking-widest text-muted-foreground">
           {tb("label")}
         </p>
-        <div className="marquee-mask mt-5 overflow-hidden">
-          <div className="animate-marquee flex w-max items-center gap-12 pr-12">
-            {[...sourceItems, ...sourceItems].map((name, i) => (
+        <Reveal>
+          <div className="mx-auto mt-5 flex max-w-4xl flex-wrap items-center justify-center gap-2.5 px-4">
+            {sourceItems.map((name) => (
               <span
-                key={i}
-                className="inline-flex shrink-0 items-center gap-2 text-base font-semibold text-foreground/55"
+                key={name}
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground/70 shadow-sm"
               >
-                <Landmark className="size-4.5 text-foreground/30" />
+                <Landmark className="size-4 text-primary/60" />
                 {name}
               </span>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
-      {/* Social proof */}
-      <section>
-        <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
+      {/* Social proof — dark navy band for contrast */}
+      <section className="band-navy">
+        <div className="mx-auto max-w-5xl px-4 py-20 sm:px-6">
           <Reveal>
-            <p className="text-center text-sm font-medium text-muted-foreground">{ts("title")}</p>
+            <p className="text-center text-sm font-medium text-white/60">{ts("title")}</p>
           </Reveal>
-          <div className="mt-8 grid grid-cols-2 gap-8 sm:grid-cols-3">
+          <div className="mt-10 grid grid-cols-2 gap-8 sm:grid-cols-3">
             <Reveal delay={0}>
-              <Stat label={ts("youtube")}>
+              <DarkStat label={ts("youtube")}>
                 <CountUp value={SOCIAL_STATS.youtube.value} suffix={SOCIAL_STATS.youtube.suffix} />
-              </Stat>
+              </DarkStat>
             </Reveal>
             <Reveal delay={100}>
-              <Stat label={ts("tiktok")}>
+              <DarkStat label={ts("tiktok")}>
                 <CountUp value={SOCIAL_STATS.tiktok.value} suffix={SOCIAL_STATS.tiktok.suffix} />
-              </Stat>
+              </DarkStat>
             </Reveal>
             {subscriberCount !== null && (
               <Reveal delay={200} className="col-span-2 sm:col-span-1">
-                <Stat label={ts("subscribers")}>
+                <DarkStat label={ts("subscribers")}>
                   {subscriberCount < 1000 ? (
                     <CountUp value={subscriberCount} />
                   ) : (
                     formatCount(subscriberCount)
                   )}
-                </Stat>
+                </DarkStat>
               </Reveal>
             )}
           </div>
@@ -163,7 +178,7 @@ export default async function LandingPage({
 
       {/* YouTube — 영상 링크가 등록되면 표시됩니다 */}
       {YOUTUBE_VIDEOS.length > 0 && (
-        <section className="border-y border-border bg-muted/40">
+        <section className="border-b border-border bg-muted/40">
           <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
             <Reveal>
               <div className="mx-auto max-w-2xl text-center">
@@ -196,7 +211,7 @@ export default async function LandingPage({
       )}
 
       {/* How it works */}
-      <section className="border-y border-border bg-muted/40">
+      <section>
         <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
           <Reveal>
             <div className="mx-auto max-w-2xl text-center">
@@ -233,45 +248,52 @@ export default async function LandingPage({
         </div>
       </section>
 
-      {/* Categories */}
-      <section className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
-        <Reveal>
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-section-title">{tc("title")}</h2>
-            <p className="mt-3 text-muted-foreground">{tc("subtitle")}</p>
-          </div>
-        </Reveal>
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {CATEGORY_KEYS.map((key, i) => {
-            const Icon = CATEGORY_META[key].icon;
-            return (
-              <Reveal key={key} delay={(i % 3) * 100}>
-                <Link
-                  href={`/articles?category=${key}`}
-                  className="group block h-full rounded-2xl border border-border bg-card p-7 transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg"
-                >
-                  <div
-                    className="grid size-12 place-items-center rounded-xl transition group-hover:scale-110"
-                    style={{ backgroundColor: `color-mix(in oklch, ${CATEGORY_META[key].colorVar} 15%, transparent)` }}
+      {/* Categories — tinted cards */}
+      <section className="border-y border-border bg-muted/40">
+        <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
+          <Reveal>
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="text-section-title">{tc("title")}</h2>
+              <p className="mt-3 text-muted-foreground">{tc("subtitle")}</p>
+            </div>
+          </Reveal>
+          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {CATEGORY_KEYS.map((key, i) => {
+              const Icon = CATEGORY_META[key].icon;
+              const color = CATEGORY_META[key].colorVar;
+              return (
+                <Reveal key={key} delay={(i % 3) * 100}>
+                  <Link
+                    href={`/articles?category=${key}`}
+                    className="group block h-full rounded-2xl border border-border bg-card p-7 transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+                    style={{
+                      backgroundImage: `linear-gradient(140deg, color-mix(in oklch, ${color} 10%, transparent), transparent 55%)`,
+                      borderColor: `color-mix(in oklch, ${color} 25%, var(--border))`,
+                    }}
                   >
-                    <Icon className="size-5.5" style={{ color: CATEGORY_META[key].colorVar }} />
-                  </div>
-                  <h3 className="mt-5 text-lg font-semibold tracking-tight group-hover:text-primary">
-                    {tc(`${key}.name`)}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    {tc(`${key}.desc`)}
-                  </p>
-                </Link>
-              </Reveal>
-            );
-          })}
+                    <div
+                      className="grid size-12 place-items-center rounded-xl transition group-hover:scale-110"
+                      style={{ backgroundColor: `color-mix(in oklch, ${color} 18%, transparent)` }}
+                    >
+                      <Icon className="size-5.5" style={{ color }} />
+                    </div>
+                    <h3 className="mt-5 text-lg font-semibold tracking-tight group-hover:text-primary">
+                      {tc(`${key}.name`)}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {tc(`${key}.desc`)}
+                    </p>
+                  </Link>
+                </Reveal>
+              );
+            })}
+          </div>
         </div>
       </section>
 
       {/* Latest articles */}
       {latestArticles.length > 0 && (
-        <section className="border-y border-border bg-muted/40">
+        <section>
           <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
             <Reveal>
               <div className="flex flex-wrap items-end justify-between gap-4">
@@ -300,29 +322,31 @@ export default async function LandingPage({
       )}
 
       {/* Testimonials */}
-      <section className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
-        <Reveal>
-          <h2 className="text-section-title text-center">{tm("title")}</h2>
-        </Reveal>
-        <div className="mt-14 grid gap-5 sm:grid-cols-3">
-          {(["t1", "t2", "t3"] as const).map((key, i) => (
-            <Reveal key={key} delay={i * 120}>
-              <figure className="flex h-full flex-col rounded-2xl border border-border bg-card p-7 shadow-sm">
-                <Quote className="size-6 text-primary/40" />
-                <blockquote className="mt-4 flex-1 leading-relaxed text-pretty">
-                  “{tm(`${key}.quote`)}”
-                </blockquote>
-                <figcaption className="mt-5 text-xs font-semibold text-muted-foreground">
-                  — {tm(`${key}.author`)}
-                </figcaption>
-              </figure>
-            </Reveal>
-          ))}
+      <section className="border-y border-border bg-muted/40">
+        <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
+          <Reveal>
+            <h2 className="text-section-title text-center">{tm("title")}</h2>
+          </Reveal>
+          <div className="mt-14 grid gap-5 sm:grid-cols-3">
+            {(["t1", "t2", "t3"] as const).map((key, i) => (
+              <Reveal key={key} delay={i * 120}>
+                <figure className="flex h-full flex-col rounded-2xl border border-border bg-card p-7 shadow-sm">
+                  <Quote className="size-6 text-primary/40" />
+                  <blockquote className="mt-4 flex-1 leading-relaxed text-pretty">
+                    “{tm(`${key}.quote`)}”
+                  </blockquote>
+                  <figcaption className="mt-5 text-xs font-semibold text-muted-foreground">
+                    — {tm(`${key}.author`)}
+                  </figcaption>
+                </figure>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="border-y border-border bg-muted/40">
+      <section>
         <div className="mx-auto max-w-3xl px-4 py-24 sm:px-6">
           <Reveal>
             <h2 className="text-section-title text-center">{tq("title")}</h2>
@@ -347,14 +371,14 @@ export default async function LandingPage({
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="mx-auto max-w-4xl px-4 py-24 sm:px-6">
+      {/* Final CTA — dark navy card */}
+      <section className="mx-auto max-w-5xl px-4 pb-24 sm:px-6">
         <Reveal>
-          <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-[radial-gradient(90%_130%_at_50%_0%,oklch(0.52_0.2_262/0.12),transparent)] px-6 py-16 text-center sm:px-12">
-            <h2 className="text-section-title text-balance">{tf("title")}</h2>
-            <p className="mt-4 text-muted-foreground">{tf("subtitle")}</p>
+          <div className="band-navy relative overflow-hidden rounded-3xl px-6 py-16 text-center sm:px-12 sm:py-20">
+            <h2 className="text-section-title text-balance text-white">{tf("title")}</h2>
+            <p className="mt-4 text-white/70">{tf("subtitle")}</p>
             <div className="mx-auto mt-9 max-w-lg">
-              <SubscribeForm source="footer-cta" />
+              <SubscribeForm source="footer-cta" tone="dark" />
             </div>
           </div>
         </Reveal>
@@ -363,11 +387,68 @@ export default async function LandingPage({
   );
 }
 
-function Stat({ children, label }: { children: React.ReactNode; label: string }) {
+function DarkStat({ children, label }: { children: React.ReactNode; label: string }) {
   return (
     <div className="text-center">
-      <div className="text-4xl font-extrabold tracking-tight sm:text-5xl">{children}</div>
-      <div className="mt-2 text-sm font-medium text-muted-foreground">{label}</div>
+      <div className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+        {children}
+      </div>
+      <div className="mt-2 text-sm font-medium text-white/60">{label}</div>
+    </div>
+  );
+}
+
+/** Stylized email preview built from real latest articles — the hero "product shot". */
+function NewsletterMockup({
+  subject,
+  badge,
+  readLabel,
+  articles,
+}: {
+  subject: string;
+  badge: string;
+  readLabel: string;
+  articles: Article[];
+}) {
+  return (
+    <div className="relative">
+      {/* glow */}
+      <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-[radial-gradient(60%_60%_at_50%_40%,oklch(0.52_0.2_262/0.25),transparent)] blur-2xl" />
+      <div className="rotate-[1.5deg] rounded-2xl border border-border bg-card shadow-2xl transition duration-500 hover:rotate-0">
+        {/* window chrome */}
+        <div className="flex items-center gap-2 border-b border-border px-5 py-3.5">
+          <span className="size-2.5 rounded-full bg-red-400/80" />
+          <span className="size-2.5 rounded-full bg-amber-400/80" />
+          <span className="size-2.5 rounded-full bg-green-400/80" />
+          <span className="ml-3 inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground">
+            <Mail className="size-3.5" />
+            K-Drift
+          </span>
+        </div>
+        <div className="p-6">
+          <p className="text-xs font-bold text-primary">K-Drift</p>
+          <p className="mt-1.5 text-lg font-bold leading-snug tracking-tight">{subject}</p>
+          <p className="mt-1 text-xs text-muted-foreground">{badge}</p>
+          <div className="mt-5 space-y-4">
+            {articles.map((a) => (
+              <div key={a.slug} className="rounded-xl border border-border bg-background p-4">
+                <p className="line-clamp-2 text-sm font-semibold leading-snug">{a.title}</p>
+                <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
+                  {a.summary}
+                </p>
+                <p className="mt-2 text-xs font-semibold text-primary">{readLabel} →</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      {/* floating badge */}
+      <div className="absolute -left-5 -bottom-4 rotate-[-3deg] rounded-xl border border-border bg-card px-4 py-2.5 shadow-lg">
+        <span className="inline-flex items-center gap-1.5 text-xs font-bold">
+          <ShieldCheck className="size-4 text-success" />
+          {badge.split("·")[0]?.trim() ?? badge}
+        </span>
+      </div>
     </div>
   );
 }

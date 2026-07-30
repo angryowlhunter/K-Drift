@@ -11,9 +11,12 @@ type Status = "idle" | "loading" | "success" | "error";
 export function SubscribeForm({
   source = "landing",
   className,
+  tone = "light",
 }: {
   source?: string;
   className?: string;
+  /** "dark" adjusts helper-text colors for use on dark backgrounds. */
+  tone?: "light" | "dark";
 }) {
   const t = useTranslations("subscribe");
   const th = useTranslations("hero");
@@ -94,11 +97,19 @@ export function SubscribeForm({
         </button>
       </div>
       {status === "error" && (
-        <p className="mt-2 text-sm text-destructive">{message}</p>
+        <p className={cn("mt-2 text-sm", tone === "dark" ? "text-red-300" : "text-destructive")}>
+          {message}
+        </p>
       )}
-      <p className="mt-2 text-xs text-muted-foreground">
+      <p className={cn("mt-2 text-xs", tone === "dark" ? "text-white/60" : "text-muted-foreground")}>
         {th("privacy")}{" "}
-        <Link href="/privacy" className="underline underline-offset-2 hover:text-foreground">
+        <Link
+          href="/privacy"
+          className={cn(
+            "underline underline-offset-2",
+            tone === "dark" ? "hover:text-white" : "hover:text-foreground",
+          )}
+        >
           {tf("privacy")}
         </Link>
       </p>
