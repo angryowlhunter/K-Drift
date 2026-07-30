@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 export function SiteFooter() {
   const t = useTranslations("footer");
@@ -13,6 +14,12 @@ export function SiteFooter() {
           {t("rights")}
         </div>
         <p className="text-sm text-muted-foreground">{t("tagline")}</p>
+        <Link
+          href="/privacy"
+          className="mt-2 text-xs text-muted-foreground underline underline-offset-2 hover:text-foreground"
+        >
+          {t("privacy")}
+        </Link>
       </div>
     </footer>
   );

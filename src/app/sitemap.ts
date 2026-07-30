@@ -14,7 +14,7 @@ function alternates(path: string) {
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const staticPaths = ["", "/articles", "/newsletter", "/about"];
+  const staticPaths = ["", "/articles", "/newsletter", "/about", "/privacy"];
 
   const entries: MetadataRoute.Sitemap = routing.locales.flatMap((locale) =>
     staticPaths.map((path) => ({

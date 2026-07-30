@@ -97,7 +97,8 @@
   },
   "footer": {
     "tagline": "한국 생활, 당신의 언어로.",
-    "rights": "케이드리프트(K-Drift)"
+    "rights": "케이드리프트(K-Drift)",
+    "privacy": "개인정보처리방침"
   },
   "heroTrust": {
     "official": "정부 공식 출처 기반",

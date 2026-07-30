@@ -3,6 +3,7 @@
 import { useLocale, useTranslations } from "next-intl";
 import { useState, type FormEvent } from "react";
 import { Loader2, CheckCircle2, ArrowRight } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
 type Status = "idle" | "loading" | "success" | "error";
@@ -16,6 +17,7 @@ export function SubscribeForm({
 }) {
   const t = useTranslations("subscribe");
   const th = useTranslations("hero");
+  const tf = useTranslations("footer");
   const locale = useLocale();
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<Status>("idle");
@@ -94,7 +96,12 @@ export function SubscribeForm({
       {status === "error" && (
         <p className="mt-2 text-sm text-destructive">{message}</p>
       )}
-      <p className="mt-2 text-xs text-muted-foreground">{th("privacy")}</p>
+      <p className="mt-2 text-xs text-muted-foreground">
+        {th("privacy")}{" "}
+        <Link href="/privacy" className="underline underline-offset-2 hover:text-foreground">
+          {tf("privacy")}
+        </Link>
+      </p>
     </form>
   );
 }
