@@ -7,4 +7,4 @@ update sources set enabled = false where type = 'rss';
 -- 2) 공식 대체: 정책브리핑 정책뉴스 API (data.go.kr, POLICY_NEWS_API_KEY 필요)
 insert into sources (name, type, url, category, enabled)
 values ('정책브리핑 정책뉴스 (전체 부처)', 'api',
-        'https://apis.data.go.kr/1371000/policyNewsService/policyNewsList', null, true);
+        'https://apis.data.go.kr/1371000/policyNewsService2/policyNewsList2', null, true);

@@ -84,23 +84,32 @@ export async function ingestPolicyNewsAction(sourceId: string): Promise<ActionRe
   const { data: src } = await supabase.from("sources").select("id,url").eq("id", sourceId).maybeSingle();
   if (!src?.url) return { ok: false, error: "API URL이 없는 소스입니다." };
 
+  // policyNewsService2 spec: params are serviceKey/startDate/endDate only,
+  // and the date range must not exceed 3 days (error code 98).
   const end = new Date();
-  const start = new Date(end.getTime() - 7 * 24 * 3600 * 1000); // last 7 days
-  const url = `${src.url}?serviceKey=${serviceKey}&pageNo=1&numOfRows=30&startDate=${fmtDate(start)}&endDate=${fmtDate(end)}`;
+  const start = new Date(end.getTime() - 2 * 24 * 3600 * 1000); // last 3 days incl. today
+  const url = `${src.url}?serviceKey=${serviceKey}&startDate=${fmtDate(start)}&endDate=${fmtDate(end)}`;
 
   let xml: string;
+  let httpStatus = 200;
   try {
     const res = await fetch(url, { headers: { accept: "application/xml" } });
+    httpStatus = res.status;
     xml = await res.text();
-    if (!res.ok) return { ok: false, error: `API 요청 실패: HTTP ${res.status}` };
   } catch (e) {
     return { ok: false, error: `API 요청 실패: ${e instanceof Error ? e.message : String(e)}` };
   }
 
-  // data.go.kr error responses come as XML with a message field.
+  // data.go.kr sends error details as XML even on non-200 — surface the real reason.
   const apiErr = pickTag(xml, "returnAuthMsg") || pickTag(xml, "errMsg");
   if (apiErr && !/normal/i.test(apiErr)) {
-    return { ok: false, error: `API 오류: ${apiErr} (인증키 등록/승인 상태를 확인하세요)` };
+    const hint = /등록되지 않은|NOT_REGISTERED/i.test(apiErr)
+      ? " — data.go.kr에서 이 API 활용신청이 승인됐는지 확인하세요. 신규 키는 반영까지 최대 1시간 걸립니다."
+      : " (인증키 등록/승인 상태를 확인하세요)";
+    return { ok: false, error: `API 오류: ${apiErr}${hint}` };
+  }
+  if (httpStatus < 200 || httpStatus >= 300) {
+    return { ok: false, error: `API 요청 실패: HTTP ${httpStatus}` };
   }
 
   const blocks = xml.match(/<NewsItem[\s\S]*?<\/NewsItem>/gi) ?? [];
