@@ -11,7 +11,7 @@ import {
   Text,
 } from "@react-email/components";
 
-type Locale = "vi" | "en" | "ko";
+type Locale = "vi" | "en" | "ko" | "ja" | "zh";
 
 export type NewsletterArticle = { slug: string; title: string; summary: string };
 
@@ -19,18 +19,24 @@ const FOOTER: Record<Locale, string> = {
   vi: "Bạn nhận được email này vì đã đăng ký K-Drift.",
   en: "You're receiving this because you subscribed to K-Drift.",
   ko: "케이드리프트를 구독하셔서 이 메일을 받았습니다.",
+  ja: "このメールはK-Driftにご登録いただいた方にお送りしています。",
+  zh: "您收到此邮件是因为您订阅了 K-Drift。",
 };
 
 const READ: Record<Locale, string> = {
   vi: "Đọc bài →",
   en: "Read →",
   ko: "읽기 →",
+  ja: "読む →",
+  zh: "阅读 →",
 };
 
 const UNSUB: Record<Locale, string> = {
   vi: "Hủy đăng ký",
   en: "Unsubscribe",
   ko: "수신거부",
+  ja: "配信停止",
+  zh: "退订",
 };
 
 export function NewsletterEmail({

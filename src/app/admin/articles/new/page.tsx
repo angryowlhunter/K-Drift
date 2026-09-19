@@ -15,6 +15,8 @@ const EMPTY: EditorArticle = {
     vi: { title: "", summary: "", body: "" },
     en: { title: "", summary: "", body: "" },
     ko: { title: "", summary: "", body: "" },
+    ja: { title: "", summary: "", body: "" },
+    zh: { title: "", summary: "", body: "" },
   },
 };
 

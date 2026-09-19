@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { verifyUnsubscribeToken } from "@/lib/unsubscribe";
 
-const LOCALES = ["vi", "en", "ko"] as const;
+const LOCALES = ["vi", "en", "ko", "ja", "zh"] as const;
 
 /** One-click unsubscribe from email footers. GET so it works from any mail client. */
 export async function GET(req: Request) {

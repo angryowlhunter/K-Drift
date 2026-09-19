@@ -10,7 +10,7 @@ import {
   Text,
 } from "@react-email/components";
 
-type Locale = "vi" | "en" | "ko";
+type Locale = "vi" | "en" | "ko" | "ja" | "zh";
 
 const COPY: Record<Locale, { preview: string; heading: string; body: string; cta: string; signoff: string }> = {
   vi: {
@@ -34,12 +34,28 @@ const COPY: Record<Locale, { preview: string; heading: string; body: string; cta
     cta: "정보 둘러보기",
     signoff: "첫 뉴스레터에서 만나요,\n케이드리프트 팀",
   },
+  ja: {
+    preview: "K-Driftへようこそ!",
+    heading: "K-Driftへようこそ 👋",
+    body: "ご登録ありがとうございます。ビザ・医療・住まい・仕事・生活など、韓国での暮らしに必要な情報を、毎週わかりやすくお届けします。",
+    cta: "記事を見る",
+    signoff: "最初のニュースレターでお会いしましょう。\nK-Driftチーム",
+  },
+  zh: {
+    preview: "欢迎加入 K-Drift!",
+    heading: "欢迎加入 K-Drift 👋",
+    body: "感谢您的订阅。我们每周为您整理签证、医疗、住房、就业和生活等在韩生活必备信息,可靠又易懂。",
+    cta: "浏览资讯",
+    signoff: "第一期通讯见,\nK-Drift 团队",
+  },
 };
 
 const UNSUB: Record<Locale, string> = {
   vi: "Hủy đăng ký",
   en: "Unsubscribe",
   ko: "수신거부",
+  ja: "配信停止",
+  zh: "退订",
 };
 
 export function WelcomeEmail({

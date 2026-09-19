@@ -23,7 +23,7 @@ const OPERATOR = "(주)코리아브로스 (대표: 최종락)";
 const CONTACT = "koreaoppa3@gmail.com";
 const EFFECTIVE_DATE = "2026-07-30";
 
-const CONTENT: Record<"ko" | "vi" | "en", PolicyContent> = {
+const CONTENT: Record<"ko" | "vi" | "en" | "ja" | "zh", PolicyContent> = {
   ko: {
     title: "개인정보처리방침",
     effective: `시행일: ${EFFECTIVE_DATE}`,
@@ -32,7 +32,7 @@ const CONTENT: Record<"ko" | "vi" | "en", PolicyContent> = {
       {
         h: "1. 수집하는 개인정보와 수집 방법",
         body: [
-          "수집 항목: 이메일 주소, 선택한 언어(베트남어/영어/한국어), 유입 경로 정보.",
+          "수집 항목: 이메일 주소, 선택한 언어(베트남어/영어/한국어/일본어/중국어), 유입 경로 정보.",
           "수집 방법: 웹사이트의 뉴스레터 구독 신청 폼을 통해 이용자가 직접 입력합니다. 그 외의 개인정보는 수집하지 않습니다.",
         ],
       },
@@ -95,7 +95,7 @@ const CONTENT: Record<"ko" | "vi" | "en", PolicyContent> = {
       {
         h: "1. Thông tin thu thập và cách thu thập",
         body: [
-          "Thông tin thu thập: địa chỉ email, ngôn ngữ đã chọn (tiếng Việt/Anh/Hàn), thông tin kênh truy cập.",
+          "Thông tin thu thập: địa chỉ email, ngôn ngữ đã chọn (tiếng Việt/Anh/Hàn/Nhật/Trung), thông tin kênh truy cập.",
           "Cách thu thập: người dùng tự nhập qua biểu mẫu đăng ký bản tin trên trang web. Chúng tôi không thu thập thông tin cá nhân nào khác.",
         ],
       },
@@ -155,7 +155,7 @@ const CONTENT: Record<"ko" | "vi" | "en", PolicyContent> = {
       {
         h: "1. Information we collect and how",
         body: [
-          "What we collect: email address, selected language (Vietnamese/English/Korean), and referral channel information.",
+          "What we collect: email address, selected language (Vietnamese/English/Korean/Japanese/Chinese), and referral channel information.",
           "How: you enter it yourself through the newsletter subscription form on our website. We collect nothing else.",
         ],
       },
@@ -203,6 +203,126 @@ const CONTENT: Record<"ko" | "vi" | "en", PolicyContent> = {
         h: "8. Changes to this policy",
         body: [
           "Changes will be announced on the website; significant changes will also be notified by email.",
+        ],
+      },
+    ],
+  },
+  ja: {
+    title: "プライバシーポリシー",
+    effective: `施行日: ${EFFECTIVE_DATE}`,
+    intro: `${OPERATOR}(以下「K-Drift」)は、韓国の個人情報保護法など関連法令を遵守し、利用者の個人情報を大切に保護します。本ポリシーはK-Driftのニュースレターおよびウェブサイトに適用されます。`,
+    sections: [
+      {
+        h: "1. 収集する個人情報と収集方法",
+        body: [
+          "収集項目:メールアドレス、選択した言語(ベトナム語/英語/韓国語/日本語/中国語)、流入経路情報。",
+          "収集方法:ウェブサイトのニュースレター購読フォームから利用者ご自身に入力いただきます。それ以外の個人情報は収集しません。",
+        ],
+      },
+      {
+        h: "2. 個人情報の利用目的",
+        body: [
+          "ニュースレター(韓国生活情報)の配信およびサービス関連のご案内のみに使用します。",
+          "収集したメールアドレスを広告目的で第三者に提供・販売・貸与することはありません。",
+        ],
+      },
+      {
+        h: "3. 保有および破棄",
+        body: [
+          "購読解除(配信停止)時には、法令上の保管義務がない限り遅滞なく破棄します。",
+          "すべてのニュースレター下部の配信停止リンクから、いつでも即時に解除できます。",
+        ],
+      },
+      {
+        h: "4. 個人情報処理の委託および国外移転",
+        body: [
+          "サービス運営のため、以下の海外事業者に個人情報の処理を委託しており、その過程で個人情報が国外に移転・保管されることがあります。",
+          "· Supabase Inc.(米国)— 購読者情報の保管(データ保存場所:AWSソウルリージョン)· 購読期間中保管",
+          "· Resend(Plus Five Five, Inc.、米国)— メール配信処理 · 配信時にメールアドレスを伝達",
+          `利用者は国外移転を拒否できます。拒否した場合、ニュースレターサービスの利用が制限されることがあります。拒否のご連絡:${CONTACT}`,
+        ],
+      },
+      {
+        h: "5. 利用者の権利",
+        body: [
+          "利用者はいつでも自身の個人情報について、閲覧・訂正・削除・処理停止を求めることができます。",
+          `請求方法:${CONTACT} 宛にメールをお送りいただければ、遅滞なく対応します。`,
+        ],
+      },
+      {
+        h: "6. 個人情報の安全性確保措置",
+        body: [
+          "個人情報はアクセス権限が管理されたデータベースに、暗号化通信(HTTPS)で保存・管理され、運営者以外のアクセスを遮断しています。",
+        ],
+      },
+      {
+        h: "7. 個人情報保護責任者",
+        body: [`責任者:チェ・ジョンラク(代表)`, `お問い合わせ:${CONTACT}`],
+      },
+      {
+        h: "8. ポリシーの変更",
+        body: [
+          "本ポリシーが変更される場合はウェブサイトでお知らせし、重要な変更はメールでご案内します。",
+        ],
+      },
+    ],
+  },
+  zh: {
+    title: "个人信息处理方针",
+    effective: `生效日期: ${EFFECTIVE_DATE}`,
+    intro: `${OPERATOR}(以下简称"K-Drift")遵守韩国《个人信息保护法》等相关法律法规,重视保护用户的个人信息。本方针适用于K-Drift通讯及网站服务。`,
+    sections: [
+      {
+        h: "1. 收集的个人信息及收集方式",
+        body: [
+          "收集项目:电子邮箱地址、所选语言(越南语/英语/韩语/日语/中文)、访问渠道信息。",
+          "收集方式:由用户通过网站的通讯订阅表单自行填写。除此之外不收集任何其他个人信息。",
+        ],
+      },
+      {
+        h: "2. 个人信息的处理目的",
+        body: [
+          "仅用于发送通讯(在韩生活信息)及与服务相关的通知。",
+          "收集的邮箱绝不会出于广告目的向第三方提供、出售或出租。",
+        ],
+      },
+      {
+        h: "3. 保存与销毁",
+        body: [
+          "退订(拒收)后,除法律另有保存义务外,将立即销毁相关信息。",
+          "可随时通过每封通讯底部的退订链接立即退订。",
+        ],
+      },
+      {
+        h: "4. 个人信息处理的委托及跨境转移",
+        body: [
+          "为运营服务,我们将个人信息处理委托给以下海外服务商,过程中个人信息可能被转移并存储于境外。",
+          "· Supabase Inc.(美国)— 订阅者信息存储(数据存储位置:AWS首尔区域)· 订阅期间保存",
+          "· Resend(Plus Five Five, Inc.,美国)— 邮件发送处理 · 发送时传递邮箱地址",
+          `用户有权拒绝跨境转移;拒绝后通讯服务的使用可能受到限制。拒绝请求请联系:${CONTACT}`,
+        ],
+      },
+      {
+        h: "5. 用户的权利",
+        body: [
+          "用户可随时要求查阅、更正、删除自己的个人信息或停止处理。",
+          `请求方式:发送邮件至 ${CONTACT},我们将立即处理。`,
+        ],
+      },
+      {
+        h: "6. 个人信息安全保障措施",
+        body: [
+          "个人信息通过加密通信(HTTPS)存储和管理于访问权限受控的数据库中,并阻止运营者以外的任何访问。",
+        ],
+      },
+      {
+        h: "7. 个人信息保护负责人",
+        body: [`负责人:崔钟洛(代表)`, `联系方式:${CONTACT}`],
+      },
+      {
+        h: "8. 方针的变更",
+        body: [
+          "本方针如有变更,将通过网站公告;重要变更将另行通过邮件通知。",
         ],
       },
     ],

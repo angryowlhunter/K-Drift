@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const LOCALES = ["vi", "en", "ko"] as const;
+const LOCALES = ["vi", "en", "ko", "ja", "zh"] as const;
 type Locale = (typeof LOCALES)[number];
 
 function json(ok: boolean, code?: string, status = 200) {
@@ -62,7 +62,13 @@ async function sendWelcome(email: string, locale: Locale) {
     const { unsubscribeUrl } = await import("@/lib/unsubscribe");
     const resend = new Resend(process.env.RESEND_API_KEY);
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://kdrift.kr";
-    const subject = { vi: "Chào mừng đến với K-Drift 👋", en: "Welcome to K-Drift 👋", ko: "케이드리프트에 오신 걸 환영해요 👋" }[locale];
+    const subject = {
+      vi: "Chào mừng đến với K-Drift 👋",
+      en: "Welcome to K-Drift 👋",
+      ko: "케이드리프트에 오신 걸 환영해요 👋",
+      ja: "K-Driftへようこそ 👋",
+      zh: "欢迎加入 K-Drift 👋",
+    }[locale];
     await resend.emails.send({
       from: process.env.NEWSLETTER_FROM,
       to: email,

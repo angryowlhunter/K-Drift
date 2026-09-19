@@ -10,7 +10,7 @@
     "about": "About"
   },
   "hero": {
-    "badge": "Weekly · Free · Vietnamese / English / Korean",
+    "badge": "Weekly · Free · 5 languages",
     "title": "Life in Korea, in your language",
     "subtitle": "Visa, hospitals, finding a home, jobs, paperwork — the essentials of living in Korea, clearly explained and delivered to your inbox every week.",
     "emailPlaceholder": "Email address",
@@ -91,7 +91,7 @@
   "about": {
     "title": "About K-Drift",
     "lead": "Life in Korea, in your language.",
-    "p1": "K-Drift is a multilingual living-info platform for foreigners in Korea. We deliver the essentials — visa, healthcare, housing, work, education — in Vietnamese, English, and Korean, in a way you can trust.",
+    "p1": "K-Drift is a multilingual living-info platform for foreigners in Korea. We deliver the essentials — visa, healthcare, housing, work, education — in Vietnamese, English, Korean, Japanese, and Chinese, in a way you can trust.",
     "p2": "Over 90% of life information in Korea is available only in Korean. Drawing on seven years of making content about life in Korea, we re-explain complex administrative information at a level that makes sense for foreigners.",
     "p3": "We start with a newsletter and grow, together with you, into a trustworthy living-info portal."
   },
@@ -126,7 +126,7 @@
     },
     "step3": {
       "title": "In your language",
-      "desc": "Translated into Vietnamese, English, and Korean — delivered to your inbox once a week."
+      "desc": "Translated into Vietnamese, English, Korean, Japanese, and Chinese — delivered to your inbox once a week."
     }
   },
   "latest": {
@@ -157,7 +157,7 @@
     },
     "q2": {
       "q": "Which languages are available?",
-      "a": "Vietnamese, English, or Korean — you receive it in the language you were viewing when you subscribed, and you can switch anytime on the site."
+      "a": "Vietnamese, English, Korean, Japanese, or Simplified Chinese — you receive it in the language you were viewing when you subscribed, and you can switch anytime on the site."
     },
     "q3": {
       "q": "How often will I get emails?",

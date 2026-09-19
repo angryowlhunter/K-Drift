@@ -103,6 +103,19 @@ body {
   word-break: keep-all;
 }
 
+/* Japanese / Simplified Chinese: use each language's system fonts for CJK glyphs
+   (Pretendard covers Korean only). Latin still comes from Be Vietnam Pro first. */
+html:lang(ja) body {
+  font-family: var(--font-be-vietnam), "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    "Yu Gothic UI", "Yu Gothic", Meiryo, "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
+  word-break: normal;
+}
+html:lang(zh) body {
+  font-family: var(--font-be-vietnam), "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+  word-break: normal;
+}
+
 /* ── Editorial display type ─────────────────────────────────────────── */
 .text-display {
   font-size: clamp(2.75rem, 6.5vw, 5rem);

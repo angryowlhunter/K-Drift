@@ -28,8 +28,8 @@ const CATEGORY_LABELS: Record<string, string> = {
   education: "교육·생활",
 };
 
-// Korean first (the source you write), then vi (primary audience), then en.
-const TAB_ORDER: Locale[] = ["ko", "vi", "en"];
+// Korean first (the source you write), then vi (primary audience), then the rest.
+const TAB_ORDER: Locale[] = ["ko", "vi", "en", "ja", "zh"];
 
 async function uploadImage(file: File): Promise<string> {
   const fd = new FormData();
@@ -83,9 +83,9 @@ export function ArticleEditor({ article }: { article: EditorArticle }) {
         setTranslateError(res.error);
         return;
       }
-      setTitles((p) => ({ ...p, en: res.en.title, vi: res.vi.title }));
-      setSummaries((p) => ({ ...p, en: res.en.summary, vi: res.vi.summary }));
-      setBodies((p) => ({ ...p, en: res.en.body, vi: res.vi.body }));
+      setTitles((p) => ({ ...p, en: res.en.title, vi: res.vi.title, ja: res.ja.title, zh: res.zh.title }));
+      setSummaries((p) => ({ ...p, en: res.en.summary, vi: res.vi.summary, ja: res.ja.summary, zh: res.zh.summary }));
+      setBodies((p) => ({ ...p, en: res.en.body, vi: res.vi.body, ja: res.ja.body, zh: res.zh.body }));
       if (!slugEdited) {
         const candidate = slugify(res.en.title);
         if (candidate) setSlug(candidate);
@@ -248,7 +248,7 @@ export function ArticleEditor({ article }: { article: EditorArticle }) {
               type="button"
               onClick={translateFromKorean}
               disabled={translating || !(titles.ko?.trim() || bodies.ko?.trim())}
-              title="한국어 원문에서 영어·베트남어로 자동 번역"
+              title="한국어 원문에서 베트남어·영어·일본어·중국어로 자동 번역"
               className="inline-flex items-center gap-1.5 rounded-md border border-primary/40 bg-primary/5 px-2.5 py-1 text-xs font-medium text-primary transition hover:bg-primary/10 disabled:opacity-50"
             >
               {translating ? <Loader2 className="size-3.5 animate-spin" /> : <Languages className="size-3.5" />}

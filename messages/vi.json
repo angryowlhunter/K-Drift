@@ -10,7 +10,7 @@
     "about": "Giới thiệu"
   },
   "hero": {
-    "badge": "Hàng tuần · Miễn phí · Tiếng Việt / Anh / Hàn",
+    "badge": "Hàng tuần · Miễn phí · 5 ngôn ngữ",
     "title": "Cuộc sống ở Hàn Quốc, bằng ngôn ngữ của bạn",
     "subtitle": "Visa, bệnh viện, tìm nhà, việc làm, thủ tục hành chính — những điều cần thiết khi sống ở Hàn Quốc, được giải thích rõ ràng và gửi đến hộp thư của bạn mỗi tuần.",
     "emailPlaceholder": "Địa chỉ email",
@@ -91,7 +91,7 @@
   "about": {
     "title": "Giới thiệu K-Drift",
     "lead": "Cuộc sống ở Hàn Quốc, bằng ngôn ngữ của bạn.",
-    "p1": "K-Drift là nền tảng thông tin đời sống đa ngôn ngữ cho người nước ngoài ở Hàn Quốc. Chúng tôi cung cấp những điều thiết yếu — visa, y tế, nhà ở, việc làm, giáo dục — bằng tiếng Việt, tiếng Anh và tiếng Hàn, một cách đáng tin cậy.",
+    "p1": "K-Drift là nền tảng thông tin đời sống đa ngôn ngữ cho người nước ngoài ở Hàn Quốc. Chúng tôi cung cấp những điều thiết yếu — visa, y tế, nhà ở, việc làm, giáo dục — bằng tiếng Việt, tiếng Anh, tiếng Hàn, tiếng Nhật và tiếng Trung, một cách đáng tin cậy.",
     "p2": "Hơn 90% thông tin đời sống ở Hàn Quốc chỉ có bằng tiếng Hàn. Với bảy năm kinh nghiệm làm nội dung về cuộc sống ở Hàn, chúng tôi giải thích lại thông tin hành chính phức tạp theo cách phù hợp với người nước ngoài.",
     "p3": "Chúng tôi bắt đầu bằng bản tin và cùng bạn phát triển thành một cổng thông tin đời sống đáng tin cậy."
   },
@@ -126,7 +126,7 @@
     },
     "step3": {
       "title": "Bằng ngôn ngữ của bạn",
-      "desc": "Được dịch sang tiếng Việt, tiếng Anh và tiếng Hàn — gửi đến hộp thư của bạn mỗi tuần một lần."
+      "desc": "Được dịch sang tiếng Việt, tiếng Anh, tiếng Hàn, tiếng Nhật và tiếng Trung — gửi đến hộp thư của bạn mỗi tuần một lần."
     }
   },
   "latest": {
@@ -157,7 +157,7 @@
     },
     "q2": {
       "q": "Có những ngôn ngữ nào?",
-      "a": "Tiếng Việt, tiếng Anh hoặc tiếng Hàn — bạn sẽ nhận theo ngôn ngữ đang xem khi đăng ký, và có thể đổi bất cứ lúc nào trên trang."
+      "a": "Tiếng Việt, tiếng Anh, tiếng Hàn, tiếng Nhật hoặc tiếng Trung (giản thể) — bạn sẽ nhận theo ngôn ngữ đang xem khi đăng ký, và có thể đổi bất cứ lúc nào trên trang."
     },
     "q3": {
       "q": "Bao lâu nhận được email một lần?",

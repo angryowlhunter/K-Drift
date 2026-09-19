@@ -70,8 +70,9 @@ export default async function LandingPage({
   const sourceItems = (["s1", "s2", "s3", "s4", "s5"] as const).map((k) => tb(k));
 
   // Split the hero title at its first comma so the second line gets the brand gradient.
+  // Handles Western (,), fullwidth (,), and Japanese (、) commas.
   const heroTitle = t("title");
-  const commaIdx = heroTitle.indexOf(",");
+  const commaIdx = heroTitle.search(/[,,、]/);
   const titleTop = commaIdx > -1 ? heroTitle.slice(0, commaIdx + 1) : heroTitle;
   const titleAccent = commaIdx > -1 ? heroTitle.slice(commaIdx + 1).trim() : null;
 

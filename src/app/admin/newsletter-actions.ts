@@ -55,7 +55,7 @@ async function prepareEmail(formData: FormData): Promise<{ error: string } | Pre
     .in("id", articleIds)
     .eq("status", "published");
 
-  const fallback: Locale[] = [locale, "ko", "en", "vi"];
+  const fallback: Locale[] = [locale, "ko", "en", "vi", "ja", "zh"];
   const articles: NewsletterArticle[] = (rows ?? []).map((r) => {
     const tr = (r.article_translations ?? []) as { locale: Locale; title: string; summary: string | null }[];
     const pick = fallback.map((l) => tr.find((t) => t.locale === l)).find(Boolean) ?? tr[0];

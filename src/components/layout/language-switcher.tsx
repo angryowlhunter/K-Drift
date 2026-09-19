@@ -3,11 +3,15 @@
 import { useLocale } from "next-intl";
 import { useParams } from "next/navigation";
 import { useTransition } from "react";
-import { Globe } from "lucide-react";
+import { Globe, ChevronDown } from "lucide-react";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { locales, localeNames, type Locale } from "@/i18n/routing";
-import { cn } from "@/lib/utils";
 
+/**
+ * Compact language dropdown. With 5 locales a pill row no longer fits on
+ * mobile, so we use a native <select> (accessible, works everywhere) styled
+ * as a small rounded control showing the current language.
+ */
 export function LanguageSwitcher() {
   const locale = useLocale();
   const router = useRouter();
@@ -23,24 +27,23 @@ export function LanguageSwitcher() {
   }
 
   return (
-    <div className="flex items-center gap-1 rounded-full border border-border bg-card p-1">
-      <Globe className="ml-1.5 size-3.5 text-muted-foreground" aria-hidden />
-      {locales.map((l) => (
-        <button
-          key={l}
-          onClick={() => switchTo(l)}
-          disabled={isPending}
-          aria-current={l === locale}
-          className={cn(
-            "rounded-full px-2.5 py-1 text-xs font-medium transition-colors",
-            l === locale
-              ? "bg-primary text-primary-foreground"
-              : "text-muted-foreground hover:text-foreground",
-          )}
-        >
-          {localeNames[l]}
-        </button>
-      ))}
-    </div>
+    <label className="relative inline-flex items-center gap-1.5 rounded-full border border-border bg-card py-1.5 pl-3 pr-2 text-xs font-medium text-foreground transition-colors hover:border-ring/50">
+      <Globe className="size-3.5 text-muted-foreground" aria-hidden />
+      <span className="pointer-events-none">{localeNames[locale as Locale] ?? locale}</span>
+      <ChevronDown className="size-3 text-muted-foreground" aria-hidden />
+      <select
+        value={locale}
+        disabled={isPending}
+        onChange={(e) => switchTo(e.target.value as Locale)}
+        aria-label="Language"
+        className="absolute inset-0 cursor-pointer opacity-0"
+      >
+        {locales.map((l) => (
+          <option key={l} value={l}>
+            {localeNames[l]}
+          </option>
+        ))}
+      </select>
+    </label>
   );
 }
