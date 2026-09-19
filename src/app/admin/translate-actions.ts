@@ -73,7 +73,7 @@ ${source.body}`;
 
   try {
     const res = await client.messages.create({
-      model: "claude-opus-4-8",
+      model: "claude-sonnet-5",
       max_tokens: 16000,
       // Stable instructions cached across repeated translate clicks in a session.
       system: [{ type: "text", text: SYSTEM, cache_control: { type: "ephemeral" } }],

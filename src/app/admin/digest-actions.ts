@@ -171,7 +171,7 @@ export async function curateRawItemAction(rawItemId: string): Promise<ActionResu
   };
   try {
     const res = await client.messages.create({
-      model: "claude-opus-4-8",
+      model: "claude-sonnet-5",
       max_tokens: 2000,
       system: [{ type: "text", text: CURATE_SYSTEM, cache_control: { type: "ephemeral" } }],
       output_config: { format: { type: "json_schema", schema: CURATE_SCHEMA } },

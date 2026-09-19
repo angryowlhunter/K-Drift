@@ -65,6 +65,7 @@ export function ArticleEditor({ article }: { article: EditorArticle }) {
       locales.map((l) => [l, article.translations[l]?.body ?? ""]),
     ) as Record<Locale, string>,
   );
+  const [insertAllLocales, setInsertAllLocales] = useState(true);
   const [translating, setTranslating] = useState(false);
   const [translateError, setTranslateError] = useState<string | null>(null);
   const bodyRefs = useRef<Record<string, HTMLTextAreaElement | null>>({});
@@ -123,13 +124,26 @@ export function ArticleEditor({ article }: { article: EditorArticle }) {
   }
 
   function insertImageInto(locale: Locale, url: string) {
-    const ta = bodyRefs.current[locale];
     const md = `![](${url})`;
     setBodies((prev) => {
-      const cur = prev[locale] ?? "";
-      const pos = ta?.selectionStart ?? cur.length;
-      const next = cur.slice(0, pos) + md + cur.slice(pos);
-      return { ...prev, [locale]: next };
+      const next = { ...prev };
+      if (insertAllLocales) {
+        // Insert into every tab: cursor position on the active tab, end of body elsewhere.
+        for (const l of locales) {
+          const cur = prev[l] ?? "";
+          if (l === locale) {
+            const pos = bodyRefs.current[l]?.selectionStart ?? cur.length;
+            next[l] = cur.slice(0, pos) + md + cur.slice(pos);
+          } else {
+            next[l] = cur.trim() ? `${cur.replace(/\s+$/, "")}\n\n${md}\n` : md;
+          }
+        }
+      } else {
+        const cur = prev[locale] ?? "";
+        const pos = bodyRefs.current[locale]?.selectionStart ?? cur.length;
+        next[locale] = cur.slice(0, pos) + md + cur.slice(pos);
+      }
+      return next;
     });
   }
 
@@ -293,7 +307,21 @@ export function ArticleEditor({ article }: { article: EditorArticle }) {
             <div>
               <div className="flex items-center justify-between">
                 <label className={label}>본문 (Markdown)</label>
-                <ImageUploadButton onUploaded={(url) => insertImageInto(l, url)} label="이미지 삽입" icon />
+                <div className="flex items-center gap-3">
+                  <label
+                    className="inline-flex cursor-pointer items-center gap-1.5 text-xs text-muted-foreground"
+                    title="켜면 업로드한 이미지가 5개 언어 본문에 모두 들어갑니다 (다른 언어 탭에는 맨 아래에 추가)"
+                  >
+                    <input
+                      type="checkbox"
+                      checked={insertAllLocales}
+                      onChange={(e) => setInsertAllLocales(e.target.checked)}
+                      className="size-3.5 accent-primary"
+                    />
+                    모든 언어에 삽입
+                  </label>
+                  <ImageUploadButton onUploaded={(url) => insertImageInto(l, url)} label="이미지 삽입" icon />
+                </div>
               </div>
               {/* Textarea stays mounted (so it submits) — hidden under preview. */}
               <textarea
