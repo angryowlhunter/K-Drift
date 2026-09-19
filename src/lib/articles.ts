@@ -1,6 +1,10 @@
 import "server-only";
 import type { CategoryKey } from "@/lib/categories";
-import type { Locale } from "@/i18n/routing";
+import { locales, type Locale } from "@/i18n/routing";
+
+/** Sort a locale list into the canonical display order (ko → en → vi → ja → zh). */
+const inDisplayOrder = (list: Locale[]): Locale[] =>
+  [...list].sort((a, b) => locales.indexOf(a) - locales.indexOf(b));
 import { SEED_ARTICLES, type ArticleSeed } from "@/data/seed-articles";
 import { createAdminClient } from "@/lib/supabase/admin";
 
@@ -40,7 +44,7 @@ function seedToArticle(seed: ArticleSeed, locale: Locale): Article {
     summary: t.summary,
     body: t.body,
     renderedLocale,
-    availableLocales: Object.keys(seed.translations) as Locale[],
+    availableLocales: inDisplayOrder(Object.keys(seed.translations) as Locale[]),
   };
 }
 
@@ -121,7 +125,7 @@ function rowToArticle(row: DbRow, locale: Locale): Article {
     summary: t?.summary ?? "",
     body: t?.body_mdx ?? "",
     renderedLocale,
-    availableLocales: available,
+    availableLocales: inDisplayOrder(available),
   };
 }
 

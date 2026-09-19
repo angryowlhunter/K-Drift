@@ -1,12 +1,14 @@
 import { defineRouting } from "next-intl/routing";
 
-export const locales = ["vi", "en", "ko", "ja", "zh"] as const;
+// Display order everywhere (header dropdown, article language pills, admin lists):
+// Korean → English → Vietnamese → Japanese → Chinese.
+export const locales = ["ko", "en", "vi", "ja", "zh"] as const;
 export type Locale = (typeof locales)[number];
 
 export const localeNames: Record<Locale, string> = {
-  vi: "Tiếng Việt",
-  en: "English",
   ko: "한국어",
+  en: "English",
+  vi: "Tiếng Việt",
   ja: "日本語",
   zh: "简体中文",
 };
