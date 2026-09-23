@@ -60,7 +60,7 @@ const UNSUB: Record<Locale, string> = {
 
 export function WelcomeEmail({
   locale = "vi",
-  siteUrl = "https://kdrift.kr",
+  siteUrl = "https://k-drift.com",
   unsubscribeUrl,
 }: {
   locale?: Locale;

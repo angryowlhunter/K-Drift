@@ -27,7 +27,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
-  const site = process.env.NEXT_PUBLIC_SITE_URL ?? "https://kdrift.vercel.app";
+  const site = process.env.NEXT_PUBLIC_SITE_URL ?? "https://k-drift.com";
   return {
     metadataBase: new URL(site),
     title: t("title"),

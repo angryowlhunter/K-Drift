@@ -61,7 +61,7 @@ async function sendWelcome(email: string, locale: Locale) {
     const { WelcomeEmail } = await import("@/emails/welcome");
     const { unsubscribeUrl } = await import("@/lib/unsubscribe");
     const resend = new Resend(process.env.RESEND_API_KEY);
-    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://kdrift.kr";
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://k-drift.com";
     const subject = {
       vi: "Chào mừng đến với K-Drift 👋",
       en: "Welcome to K-Drift 👋",

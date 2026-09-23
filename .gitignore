@@ -30,3 +30,6 @@ next-env.d.ts
 
 # vercel
 .vercel
+
+# Claude chat deliveries (previews, drafts) - not part of the site
+Claude outputs/

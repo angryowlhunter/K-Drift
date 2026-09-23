@@ -63,7 +63,7 @@ async function prepareEmail(formData: FormData): Promise<{ error: string } | Pre
   });
   if (articles.length === 0) return { error: "선택한 발행 글을 찾을 수 없습니다." };
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://kdrift.kr";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://k-drift.com";
   const html = await render(
     NewsletterEmail({
       locale,

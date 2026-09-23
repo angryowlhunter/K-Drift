@@ -30,7 +30,7 @@ export function verifyUnsubscribeToken(email: string, token: string): boolean {
 }
 
 export function unsubscribeUrl(email: string, locale: string, siteUrl?: string): string {
-  const base = siteUrl ?? process.env.NEXT_PUBLIC_SITE_URL ?? "https://kdrift.vercel.app";
+  const base = siteUrl ?? process.env.NEXT_PUBLIC_SITE_URL ?? "https://k-drift.com";
   const params = new URLSearchParams({
     email: email.trim().toLowerCase(),
     token: unsubscribeToken(email),

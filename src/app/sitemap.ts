@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 import { getArticles } from "@/lib/articles";
 
-const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://kdrift.vercel.app";
+const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://k-drift.com";
 
 /** hreflang alternates for one path across all locales. */
 function alternates(path: string) {

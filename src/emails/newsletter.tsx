@@ -44,7 +44,7 @@ export function NewsletterEmail({
   subject,
   intro,
   articles,
-  siteUrl = "https://kdrift.kr",
+  siteUrl = "https://k-drift.com",
   unsubscribeUrl,
 }: {
   locale?: Locale;
