@@ -21,7 +21,8 @@
     "title": "Trusted by people already navigating life in Korea",
     "youtube": "YouTube subscribers",
     "tiktok": "TikTok followers",
-    "subscribers": "Newsletter readers"
+    "subscribers": "Newsletter readers",
+    "languages": "Languages"
   },
   "categories": {
     "title": "Here's what you'll get",
@@ -98,7 +99,9 @@
   "footer": {
     "tagline": "Life in Korea, in your language.",
     "rights": "K-Drift",
-    "privacy": "Privacy Policy"
+    "privacy": "Privacy Policy",
+    "menu": "Menu",
+    "contact": "Contact"
   },
   "heroTrust": {
     "official": "Based on official government sources",

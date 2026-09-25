@@ -21,7 +21,8 @@
     "title": "已被众多人信赖的在韩生活信息",
     "youtube": "YouTube订阅者",
     "tiktok": "TikTok粉丝",
-    "subscribers": "通讯订阅者"
+    "subscribers": "通讯订阅者",
+    "languages": "支持语言"
   },
   "categories": {
     "title": "你将收到这些信息",
@@ -98,7 +99,9 @@
   "footer": {
     "tagline": "用你的语言,读懂在韩生活。",
     "rights": "K-Drift",
-    "privacy": "个人信息处理方针"
+    "privacy": "个人信息处理方针",
+    "menu": "菜单",
+    "contact": "联系我们"
   },
   "heroTrust": {
     "official": "基于政府官方来源",

@@ -21,7 +21,8 @@
     "title": "Được tin tưởng bởi những người đang sống tại Hàn Quốc",
     "youtube": "Người đăng ký YouTube",
     "tiktok": "Người theo dõi TikTok",
-    "subscribers": "Người đọc bản tin"
+    "subscribers": "Người đọc bản tin",
+    "languages": "Ngôn ngữ hỗ trợ"
   },
   "categories": {
     "title": "Bạn sẽ nhận được những thông tin này",
@@ -98,7 +99,9 @@
   "footer": {
     "tagline": "Cuộc sống ở Hàn Quốc, bằng ngôn ngữ của bạn.",
     "rights": "K-Drift",
-    "privacy": "Chính sách bảo mật"
+    "privacy": "Chính sách bảo mật",
+    "menu": "Menu",
+    "contact": "Liên hệ"
   },
   "heroTrust": {
     "official": "Dựa trên nguồn chính thức của chính phủ",

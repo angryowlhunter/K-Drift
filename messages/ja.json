@@ -21,7 +21,8 @@
     "title": "すでに多くの人が信頼する韓国生活情報",
     "youtube": "YouTube登録者",
     "tiktok": "TikTokフォロワー",
-    "subscribers": "ニュースレター購読者"
+    "subscribers": "ニュースレター購読者",
+    "languages": "対応言語"
   },
   "categories": {
     "title": "こんな情報が届きます",
@@ -98,7 +99,9 @@
   "footer": {
     "tagline": "韓国での暮らしを、あなたの言語で。",
     "rights": "K-Drift(ケイドリフト)",
-    "privacy": "プライバシーポリシー"
+    "privacy": "プライバシーポリシー",
+    "menu": "メニュー",
+    "contact": "お問い合わせ"
   },
   "heroTrust": {
     "official": "政府公式ソースに基づく",

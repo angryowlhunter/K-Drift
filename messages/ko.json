@@ -21,7 +21,8 @@
     "title": "이미 한국 생활 정보를 신뢰하는 사람들",
     "youtube": "유튜브 구독자",
     "tiktok": "틱톡 팔로워",
-    "subscribers": "뉴스레터 구독자"
+    "subscribers": "뉴스레터 구독자",
+    "languages": "지원 언어"
   },
   "categories": {
     "title": "이런 정보를 받아보세요",
@@ -98,7 +99,9 @@
   "footer": {
     "tagline": "한국 생활, 당신의 언어로.",
     "rights": "케이드리프트(K-Drift)",
-    "privacy": "개인정보처리방침"
+    "privacy": "개인정보처리방침",
+    "menu": "메뉴",
+    "contact": "문의"
   },
   "heroTrust": {
     "official": "정부 공식 출처 기반",

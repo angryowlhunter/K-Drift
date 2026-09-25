@@ -179,7 +179,9 @@ export default async function LandingPage({
                 <CountUp value={SOCIAL_STATS.tiktok.value} suffix={SOCIAL_STATS.tiktok.suffix} />
               </DarkStat>
             </Reveal>
-            {subscriberCount !== null && (
+            {/* Subscriber count becomes social proof only once it's meaningful;
+                until then we show the language count (a real strength). */}
+            {subscriberCount !== null && subscriberCount >= 100 ? (
               <Reveal delay={200} className="col-span-2 sm:col-span-1">
                 <DarkStat label={ts("subscribers")}>
                   {subscriberCount < 1000 ? (
@@ -187,6 +189,12 @@ export default async function LandingPage({
                   ) : (
                     formatCount(subscriberCount)
                   )}
+                </DarkStat>
+              </Reveal>
+            ) : (
+              <Reveal delay={200} className="col-span-2 sm:col-span-1">
+                <DarkStat label={ts("languages")}>
+                  <CountUp value={5} />
                 </DarkStat>
               </Reveal>
             )}
