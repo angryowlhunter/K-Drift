@@ -15,9 +15,15 @@ export function SiteFooter() {
         <div className="grid gap-10 sm:grid-cols-3">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 font-bold">
-              <Image src="/logo-symbol.png" alt="K-Drift" width={28} height={28} />
-              K-Drift
+            <div className="flex items-center gap-2.5">
+              <Image src="/logo-symbol.png" alt="" width={28} height={28} />
+              <Image
+                src="/logo-wordmark.png"
+                alt="K-Drift"
+                width={59}
+                height={24}
+                className="h-6 w-auto"
+              />
             </div>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
               {t("tagline")}
