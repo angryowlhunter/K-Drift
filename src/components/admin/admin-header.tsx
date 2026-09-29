@@ -8,9 +8,8 @@ export function AdminHeader() {
       <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-4 sm:px-6">
         <div className="flex items-center gap-6">
           <Link href="/admin" className="flex items-center gap-2 font-bold">
-            <span className="grid size-6 place-items-center rounded-md bg-primary text-xs text-primary-foreground">
-              K
-            </span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo-symbol.png" alt="K-Drift" width={24} height={24} />
             Admin
           </Link>
           <nav className="flex items-center gap-4 text-sm text-muted-foreground">

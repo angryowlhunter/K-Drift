@@ -37,9 +37,8 @@ export default function AdminLoginPage() {
     <div className="grid min-h-svh place-items-center px-4">
       <div className="w-full max-w-sm">
         <div className="mb-6 flex items-center justify-center gap-2 text-lg font-bold">
-          <span className="grid size-7 place-items-center rounded-lg bg-primary text-sm text-primary-foreground">
-            K
-          </span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo-symbol.png" alt="K-Drift" width={28} height={28} />
           K-Drift Admin
         </div>
         <form

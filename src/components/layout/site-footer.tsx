@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
@@ -15,9 +16,7 @@ export function SiteFooter() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 font-bold">
-              <span className="grid size-7 place-items-center rounded-lg bg-primary text-sm text-primary-foreground">
-                K
-              </span>
+              <Image src="/logo-symbol.png" alt="K-Drift" width={28} height={28} />
               K-Drift
             </div>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
