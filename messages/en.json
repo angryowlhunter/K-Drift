@@ -183,5 +183,62 @@
     "title": "Meet us on video first",
     "subtitle": "Made by the HanQuocBros channel trusted by 106K on YouTube and 400K on TikTok.",
     "channel": "Visit the channel"
+  },
+  "quiz": {
+    "badge": "Just for fun",
+    "title": "Korea Survival Skills Test",
+    "subtitle": "전세, 칼퇴, 4대보험 — how much do you actually know?",
+    "cta": "Take the test",
+    "meta": "12 questions · about 2 min · free",
+    "start": {
+      "subtitle": "Twelve questions to see how well you've settled into life in Korea. Don't worry if you don't know — every question comes with an explanation.",
+      "residenceLabel": "How long have you lived in Korea?",
+      "residenceHint": "We'll compare it with your result. Feel free to skip.",
+      "button": "Start the test"
+    },
+    "residence": {
+      "under6m": "Under 6 months",
+      "under2y": "6 months – 2 years",
+      "under5y": "2 – 5 years",
+      "over5y": "Over 5 years"
+    },
+    "play": {
+      "correct": "Correct!",
+      "wrong": "Not quite",
+      "next": "Next question",
+      "finish": "See my result"
+    },
+    "result": {
+      "retake": "Try again",
+      "share": "Share result",
+      "shared": "Copied!",
+      "reviewTitle": "Review what you missed",
+      "vocabTitle": "Korean words from this round",
+      "subscribeTitle": "Get this kind of info every week",
+      "subscribeSubtitle": "Visa, healthcare, housing, work and daily life — organized from official government sources.",
+      "tiers": {
+        "t1": {
+          "name": "Just landed · Traveler",
+          "desc": "Plenty you don't know yet, and that's fine. Everyone starts here."
+        },
+        "t2": {
+          "name": "Settling in · Year 1",
+          "desc": "You've got the basics. Contracts and insurance are the next things worth knowing."
+        },
+        "t3": {
+          "name": "Local know-how · Year 3",
+          "desc": "You know most of it. People are probably asking you for advice by now."
+        },
+        "t4": {
+          "name": "Practically Korean · Year 5+",
+          "desc": "You're the senior here. Time to pass it on to the newcomers!"
+        }
+      },
+      "compare": {
+        "higher": "You know more than your time here suggests! 👏",
+        "same": "Right on track for how long you've been here",
+        "lower": "A little more know-how would make life a lot easier"
+      }
+    }
   }
 }

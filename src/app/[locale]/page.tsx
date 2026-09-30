@@ -57,6 +57,7 @@ export default async function LandingPage({
   const tl = await getTranslations("latest");
   const tm = await getTranslations("testimonials");
   const tq = await getTranslations("faq");
+  const tz = await getTranslations("quiz");
   const tf = await getTranslations("finalCta");
   const ty = await getTranslations("youtube");
   const tmeta = await getTranslations("meta");
@@ -371,8 +372,40 @@ export default async function LandingPage({
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* 한국 살이 생존력 테스트 — 부담 없는 참여 거리로 구독까지 잇는 구간 */}
       <section>
+        <div className="mx-auto max-w-4xl px-4 py-24 sm:px-6">
+          <Reveal>
+            <div className="relative overflow-hidden rounded-3xl border border-border bg-card px-6 py-14 text-center shadow-sm sm:px-12">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -top-24 left-1/2 size-64 -translate-x-1/2 rounded-full bg-primary/10 blur-3xl"
+              />
+              <div className="relative">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-3.5 py-1.5 text-xs font-semibold text-muted-foreground">
+                  <Sparkles className="size-3.5 text-primary" />
+                  {tz("badge")}
+                </span>
+                <h2 className="text-section-title mt-6">{tz("title")}</h2>
+                <p className="mx-auto mt-4 max-w-lg leading-relaxed text-muted-foreground text-pretty">
+                  {tz("subtitle")}
+                </p>
+                <Link
+                  href="/quiz"
+                  className="mt-9 inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-cta px-7 text-sm font-bold text-cta-foreground shadow-lg shadow-cta/30 transition hover:brightness-105"
+                >
+                  {tz("cta")}
+                  <ArrowRight className="size-4" />
+                </Link>
+                <p className="mt-4 text-xs text-muted-foreground">{tz("meta")}</p>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="border-t border-border bg-muted/40">
         <div className="mx-auto max-w-3xl px-4 py-24 sm:px-6">
           <Reveal>
             <h2 className="text-section-title text-center">{tq("title")}</h2>

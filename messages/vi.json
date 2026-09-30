@@ -183,5 +183,62 @@
     "title": "Gặp chúng tôi qua video trước",
     "subtitle": "Được thực hiện bởi kênh HanQuocBros — 106K trên YouTube và 400K trên TikTok tin tưởng.",
     "channel": "Xem kênh"
+  },
+  "quiz": {
+    "badge": "Test cho vui",
+    "title": "Bài test kỹ năng sinh tồn ở Hàn Quốc",
+    "subtitle": "전세, 칼퇴, 4대보험 — bạn biết được bao nhiêu?",
+    "cta": "Làm bài test",
+    "meta": "12 câu hỏi · khoảng 2 phút · miễn phí",
+    "start": {
+      "subtitle": "12 câu hỏi để xem bạn đã quen với cuộc sống ở Hàn Quốc đến đâu. Không biết cũng không sao — mỗi câu đều có giải thích.",
+      "residenceLabel": "Bạn đã sống ở Hàn Quốc bao lâu?",
+      "residenceHint": "Chúng tôi sẽ so sánh với kết quả của bạn. Bỏ qua cũng được.",
+      "button": "Bắt đầu làm bài"
+    },
+    "residence": {
+      "under6m": "Dưới 6 tháng",
+      "under2y": "6 tháng – 2 năm",
+      "under5y": "2 – 5 năm",
+      "over5y": "Trên 5 năm"
+    },
+    "play": {
+      "correct": "Chính xác!",
+      "wrong": "Chưa đúng rồi",
+      "next": "Câu tiếp theo",
+      "finish": "Xem kết quả"
+    },
+    "result": {
+      "retake": "Làm lại",
+      "share": "Chia sẻ kết quả",
+      "shared": "Đã sao chép!",
+      "reviewTitle": "Xem lại câu đã sai",
+      "vocabTitle": "Từ tiếng Hàn trong lượt này",
+      "subscribeTitle": "Nhận những thông tin như thế này mỗi tuần",
+      "subscribeSubtitle": "Visa, y tế, nhà ở, việc làm và đời sống — tổng hợp từ nguồn chính thức của chính phủ.",
+      "tiers": {
+        "t1": {
+          "name": "Vừa đặt chân · Khách du lịch",
+          "desc": "Còn nhiều điều chưa biết, nhưng không sao. Ai cũng bắt đầu từ đây."
+        },
+        "t2": {
+          "name": "Bắt đầu ổn định · Năm 1",
+          "desc": "Bạn đã nắm được cơ bản. Hợp đồng và bảo hiểm là thứ nên tìm hiểu tiếp."
+        },
+        "t3": {
+          "name": "Thành thạo · Năm 3",
+          "desc": "Bạn biết gần hết rồi. Chắc mọi người xung quanh đang hỏi bạn đấy?"
+        },
+        "t4": {
+          "name": "Gần như người Hàn · Trên 5 năm",
+          "desc": "Bạn là tiền bối ở đây rồi. Hãy chia sẻ cho người mới nhé!"
+        }
+      },
+      "compare": {
+        "higher": "Bạn biết nhiều hơn so với thời gian đã ở đây! 👏",
+        "same": "Kết quả đúng với thời gian bạn đã sống ở Hàn",
+        "lower": "Biết thêm một chút nữa là cuộc sống sẽ dễ hơn nhiều"
+      }
+    }
   }
 }
