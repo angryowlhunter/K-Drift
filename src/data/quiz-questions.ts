@@ -185,62 +185,62 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
     ko: {
       prompt: "이사를 했습니다. 외국인등록증이 있다면 “전입신고(체류지 변경신고)”는 언제까지 해야 할까요?",
       options: [
-        "이사한 날부터 14일 이내",
+        "이사한 날부터 15일 이내",
         "이사한 날부터 3개월 이내",
         "다음 비자 연장 때 함께",
         "집주인이 알아서 해주므로 할 필요 없음",
       ],
       explanation:
-        "외국인등록을 마친 사람이 이사하면 14일 이내에 새 주소를 신고해야 하고, 늦으면 과태료가 부과될 수 있습니다. 관할 출입국·외국인청 또는 주민센터에서 할 수 있어요. 전세·월세라면 이때 확정일자도 함께 받아두면 보증금을 지키는 데 도움이 됩니다.",
-      meaning: "이사 후 새 주소를 신고하는 절차 (14일 이내)",
+        "외국인등록을 마친 사람이 이사하면 전입한 날부터 15일 이내에 새 주소를 신고해야 합니다(출입국관리법 제36조). 참고로 한국인의 전입신고 기한은 14일이라 헷갈리기 쉬워요. 관할 출입국·외국인청 또는 주민센터에서 할 수 있어요. 전세·월세라면 이때 확정일자도 함께 받아두면 보증금을 지키는 데 도움이 됩니다.",
+      meaning: "이사 후 새 주소를 신고하는 절차 (15일 이내)",
     },
     en: {
       prompt: "You just moved. If you hold an alien registration card, by when must you file 전입신고 (change of residence)?",
       options: [
-        "Within 14 days of moving",
+        "Within 15 days of moving",
         "Within 3 months of moving",
         "Together with your next visa extension",
         "Never — the landlord handles it for you",
       ],
       explanation:
-        "Registered foreign residents must report a new address within 14 days of moving; filing late can mean a fine. You can do it at your immigration office or a community service center (주민센터). If you're renting, get the fixed date stamp (확정일자) at the same time — it helps protect your deposit.",
-      meaning: "Reporting your new address after moving (within 14 days)",
+        "Registered foreign residents must report a new address within 15 days of moving in (Immigration Act, Art. 36). Note that the deadline for Korean nationals is 14 days — an easy one to mix up. You can do it at your immigration office or a community service center (주민센터). If you're renting, get the fixed date stamp (확정일자) at the same time — it helps protect your deposit.",
+      meaning: "Reporting your new address after moving (within 15 days)",
     },
     vi: {
       prompt: "Bạn vừa chuyển nhà. Nếu đã có thẻ đăng ký người nước ngoài, phải làm 전입신고 (khai báo thay đổi nơi cư trú) trong bao lâu?",
       options: [
-        "Trong vòng 14 ngày kể từ ngày chuyển",
+        "Trong vòng 15 ngày kể từ ngày chuyển",
         "Trong vòng 3 tháng kể từ ngày chuyển",
         "Làm cùng lúc với lần gia hạn visa tiếp theo",
         "Không cần vì chủ nhà sẽ làm giúp",
       ],
       explanation:
-        "Người nước ngoài đã đăng ký cư trú phải khai báo địa chỉ mới trong vòng 14 ngày sau khi chuyển nhà; khai muộn có thể bị phạt. Bạn có thể làm tại văn phòng xuất nhập cảnh hoặc trung tâm hành chính phường (주민센터). Nếu thuê nhà, hãy xin luôn dấu xác nhận ngày (확정일자) để bảo vệ tiền đặt cọc.",
-      meaning: "Thủ tục khai báo địa chỉ mới sau khi chuyển nhà (trong 14 ngày)",
+        "Người nước ngoài đã đăng ký cư trú phải khai báo địa chỉ mới trong vòng 15 ngày kể từ ngày chuyển đến (Luật Quản lý Xuất nhập cảnh, Điều 36). Lưu ý: thời hạn của người Hàn Quốc là 14 ngày nên rất dễ nhầm. Bạn có thể làm tại văn phòng xuất nhập cảnh hoặc trung tâm hành chính phường (주민센터). Nếu thuê nhà, hãy xin luôn dấu xác nhận ngày (확정일자) để bảo vệ tiền đặt cọc.",
+      meaning: "Thủ tục khai báo địa chỉ mới sau khi chuyển nhà (trong 15 ngày)",
     },
     ja: {
       prompt: "引っ越しをしました。外国人登録証がある場合、「전입신고」(滞在地変更届)はいつまでに行うべきでしょう?",
       options: [
-        "引っ越した日から14日以内",
+        "引っ越した日から15日以内",
         "引っ越した日から3か月以内",
         "次のビザ延長のときにまとめて",
         "大家がやってくれるので不要",
       ],
       explanation:
-        "外国人登録を済ませた人が引っ越した場合、14日以内に新住所を届け出る必要があり、遅れると過料が科されることがあります。管轄の出入国・外国人庁または住民センター(주민센터)で手続きできます。賃貸なら同時に確定日付(확정일자)も受けておくと保証金を守るのに役立ちます。",
-      meaning: "引っ越し後に新住所を届け出る手続き(14日以内)",
+        "外国人登録を済ませた人が引っ越した場合、転入した日から15日以内に新住所を届け出る必要があります(出入国管理法第36条)。韓国人の転入届の期限は14日なので混同しやすい点です。管轄の出入国・外国人庁または住民センター(주민센터)で手続きできます。賃貸なら同時に確定日付(확정일자)も受けておくと保証金を守るのに役立ちます。",
+      meaning: "引っ越し後に新住所を届け出る手続き(15日以内)",
     },
     zh: {
       prompt: "你刚搬了家。如果持有外国人登录证,“전입신고”(居住地变更申报)最晚要在什么时候完成?",
       options: [
-        "搬家之日起14天内",
+        "搬家之日起15天内",
         "搬家之日起3个月内",
         "等下次签证延期时一并办理",
         "不用办,房东会代办",
       ],
       explanation:
-        "已完成外国人登录的人搬家后,须在14天内申报新住址,逾期可能被处以罚款。可在管辖出入境·外国人厅或社区中心(주민센터)办理。若是租房,建议同时办理确定日期(확정일자),有助于保护保证金。",
-      meaning: "搬家后申报新住址的手续(14天内)",
+        "已完成外国人登录的人搬家后,须自迁入之日起15天内申报新住址(《出入境管理法》第36条)。韩国人的迁入申报期限是14天,很容易混淆。可在管辖出入境·外国人厅或社区中心(주민센터)办理。若是租房,建议同时办理确定日期(확정일자),有助于保护保证金。",
+      meaning: "搬家后申报新住址的手续(15天内)",
     },
   },
 
@@ -367,7 +367,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
       prompt: "1년 이상 일했고 출근율이 80% 이상입니다. 법으로 보장되는 “연차” 휴가는 며칠일까요?",
       options: ["5일", "15일", "30일", "회사가 정하는 대로"],
       explanation:
-        "1년 이상 근무하고 출근율이 80% 이상이면 연차 유급휴가 15일이 법으로 보장됩니다. 1년 미만이라면 1개월 개근할 때마다 1일씩 생겨요. 연차는 원칙적으로 근로자가 원하는 날에 쓸 수 있고, 외국인 근로자에게도 똑같이 적용됩니다.",
+        "1년 이상 근무하고 출근율이 80% 이상이면 연차 유급휴가 15일이 법으로 보장됩니다(근로기준법 제60조). 1년 미만이라면 1개월 개근할 때마다 1일씩 생겨요. 연차는 원칙적으로 근로자가 원하는 날에 쓸 수 있고, 외국인 근로자에게도 똑같이 적용됩니다.",
       meaning: "법으로 보장되는 유급 연차휴가",
     },
     en: {
@@ -530,7 +530,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
       prompt: "한국에 며칠 넘게 머물 예정이면 “외국인등록증”을 발급받아야 할까요?",
       options: ["30일", "60일", "90일", "180일"],
       explanation:
-        "90일을 초과해 체류하려면 입국일로부터 90일 이내에 외국인등록을 해야 합니다. 기한을 넘기면 과태료가 부과돼요. 외국인등록증은 한국에서의 신분증이라 은행 계좌 개설, 휴대폰 개통, 병원 이용의 기본이 됩니다.",
+        "90일을 초과해 체류하려면 입국일로부터 90일 이내에 외국인등록을 해야 합니다(출입국관리법 제31조). 기한을 넘기면 과태료가 부과돼요. 외국인등록증은 한국에서의 신분증이라 은행 계좌 개설, 휴대폰 개통, 병원 이용의 기본이 됩니다.",
       meaning: "90일 초과 체류자의 한국 신분증",
     },
     en: {
