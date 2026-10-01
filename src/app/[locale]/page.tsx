@@ -434,7 +434,7 @@ export default async function LandingPage({
                   </p>
                   <Link
                     href="/vocab"
-                    className="mt-7 inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-border bg-background px-7 text-sm font-bold transition hover:border-ring/50"
+                    className="mt-7 inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-cta px-7 text-sm font-bold text-cta-foreground shadow-lg shadow-cta/30 transition hover:brightness-105"
                   >
                     {tv("cta")}
                     <ArrowRight className="size-4" />
