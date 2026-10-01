@@ -240,5 +240,82 @@
         "lower": "Biết thêm một chút nữa là cuộc sống sẽ dễ hơn nhiều"
       }
     }
+  },
+  "tests": {
+    "badge": "Thử cho vui",
+    "title": "Hai bài kiểm tra",
+    "subtitle": "Một bài về thông tin cần cho cuộc sống ở Hàn Quốc, một bài từ vựng tiếng Hàn nhẹ nhàng. Cả hai đều miễn phí, và mỗi câu đều có giải thích."
+  },
+  "vocab": {
+    "badge": "Tiếng Hàn, cho vui",
+    "title": "Kiểm tra từ vựng TOPIK",
+    "subtitle": "Từ cấp 1 đến cấp 6 — mười hai từ để đo vốn từ của bạn",
+    "cta": "Làm bài từ vựng",
+    "meta": "12 từ · khoảng 2 phút · miễn phí",
+    "prompt": "Từ này nghĩa là gì?",
+    "levelLabel": "Cấp {level}",
+    "disclaimer": "TOPIK không công bố danh sách từ vựng chính thức. Cấp độ trong bài này chỉ mang tính tham khảo, dựa trên từ vựng theo cấp của «Chương trình Chuẩn tiếng Hàn» do Viện Quốc ngữ Quốc gia ban hành — không phải điểm TOPIK thực tế.",
+    "pos": {
+      "noun": "danh từ",
+      "verb": "động từ",
+      "adjective": "tính từ",
+      "adverb": "trạng từ",
+      "idiom": "thành ngữ"
+    },
+    "start": {
+      "subtitle": "Bạn bắt đầu từ cấp 1 và leo đến cấp 6 — mỗi cấp hai từ, tổng cộng mười hai từ.",
+      "howTitle": "Cách tiến hành",
+      "h1": "Đi lên từng cấp một, bắt đầu từ dễ",
+      "h2": "Chọn đáp án là có ngay câu ví dụ và cách dùng",
+      "h3": "Kết thúc sẽ thấy rõ bạn dừng lại ở cấp nào",
+      "button": "Bắt đầu bài từ vựng"
+    },
+    "play": {
+      "correct": "Chính xác!",
+      "wrong": "Chưa đúng",
+      "next": "Từ tiếp theo",
+      "finish": "Xem kết quả"
+    },
+    "result": {
+      "retake": "Làm lại",
+      "share": "Chia sẻ kết quả",
+      "shared": "Đã sao chép!",
+      "breakdownTitle": "Kết quả theo cấp",
+      "breakdownHint": "Biết mình dừng ở cấp nào sẽ biết nên học gì tiếp.",
+      "reviewTitle": "Xem lại những từ sai",
+      "vocabTitle": "Các từ trong lượt này",
+      "subscribeTitle": "Nhận những từ thật sự dùng trong đời sống ở Hàn Quốc, mỗi tuần",
+      "subscribeSubtitle": "Chúng tôi tổng hợp những từ ngữ và chế độ bạn gặp trong đời sống, dựa trên nguồn chính thức của cơ quan nhà nước, rồi gửi vào hộp thư của bạn.",
+      "levels": {
+        "l0": {
+          "name": "Mới bắt đầu",
+          "desc": "Chính từ đây là khởi đầu. Hãy góp dần từng từ cấp 1."
+        },
+        "l1": {
+          "name": "Khoảng cấp 1",
+          "desc": "Nền cơ bản đã có. Hãy mở rộng từ những từ dùng hằng ngày."
+        },
+        "l2": {
+          "name": "Khoảng cấp 2",
+          "desc": "Vốn từ cho hội thoại thường ngày đã bắt đầu hình thành."
+        },
+        "l3": {
+          "name": "Khoảng cấp 3",
+          "desc": "Bạn đã tới nhóm từ hành chính như hợp đồng, đơn xin."
+        },
+        "l4": {
+          "name": "Khoảng cấp 4",
+          "desc": "Bạn xử lý tốt cả từ trừu tượng. Tin tức đang dần đọc được."
+        },
+        "l5": {
+          "name": "Khoảng cấp 5",
+          "desc": "Bạn dùng được cả từ Hán Hàn trong công văn và bài báo."
+        },
+        "l6": {
+          "name": "Khoảng cấp 6",
+          "desc": "Cả thành ngữ nữa. Đến mức này thì bạn là người giải thích bằng tiếng Hàn."
+        }
+      }
+    }
   }
 }

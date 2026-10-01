@@ -11,6 +11,7 @@ import {
   ArrowRight,
   MonitorPlay,
   Mail,
+  BookOpen,
 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
@@ -58,6 +59,8 @@ export default async function LandingPage({
   const tm = await getTranslations("testimonials");
   const tq = await getTranslations("faq");
   const tz = await getTranslations("quiz");
+  const tv = await getTranslations("vocab");
+  const tt = await getTranslations("tests");
   const tf = await getTranslations("finalCta");
   const ty = await getTranslations("youtube");
   const tmeta = await getTranslations("meta");
@@ -372,35 +375,75 @@ export default async function LandingPage({
         </div>
       </section>
 
-      {/* 한국 살이 생존력 테스트 — 부담 없는 참여 거리로 구독까지 잇는 구간 */}
+      {/* 테스트 두 가지 — 부담 없는 참여 거리로 구독까지 잇는 구간 */}
       <section>
-        <div className="mx-auto max-w-4xl px-4 py-24 sm:px-6">
+        <div className="mx-auto max-w-5xl px-4 py-24 sm:px-6">
           <Reveal>
-            <div className="relative overflow-hidden rounded-3xl border border-border bg-card px-6 py-14 text-center shadow-sm sm:px-12">
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -top-24 left-1/2 size-64 -translate-x-1/2 rounded-full bg-primary/10 blur-3xl"
-              />
-              <div className="relative">
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-3.5 py-1.5 text-xs font-semibold text-muted-foreground">
-                  <Sparkles className="size-3.5 text-primary" />
-                  {tz("badge")}
-                </span>
-                <h2 className="text-section-title mt-6">{tz("title")}</h2>
-                <p className="mx-auto mt-4 max-w-lg leading-relaxed text-muted-foreground text-pretty">
-                  {tz("subtitle")}
-                </p>
-                <Link
-                  href="/quiz"
-                  className="mt-9 inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-cta px-7 text-sm font-bold text-cta-foreground shadow-lg shadow-cta/30 transition hover:brightness-105"
-                >
-                  {tz("cta")}
-                  <ArrowRight className="size-4" />
-                </Link>
-                <p className="mt-4 text-xs text-muted-foreground">{tz("meta")}</p>
-              </div>
+            <div className="text-center">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-semibold text-muted-foreground">
+                <Sparkles className="size-3.5 text-primary" />
+                {tt("badge")}
+              </span>
+              <h2 className="text-section-title mt-6">{tt("title")}</h2>
+              <p className="mx-auto mt-4 max-w-xl leading-relaxed text-muted-foreground text-pretty">
+                {tt("subtitle")}
+              </p>
             </div>
           </Reveal>
+
+          <div className="mt-12 grid gap-5 sm:grid-cols-2">
+            <Reveal className="h-full">
+              <div className="relative flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card px-6 py-10 text-center shadow-sm sm:px-8">
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute -top-20 left-1/2 size-56 -translate-x-1/2 rounded-full bg-primary/10 blur-3xl"
+                />
+                <div className="relative flex flex-1 flex-col">
+                  <div className="mx-auto grid size-12 place-items-center rounded-2xl bg-primary/10">
+                    <ShieldCheck className="size-6 text-primary" />
+                  </div>
+                  <h3 className="mt-5 text-xl font-bold">{tz("title")}</h3>
+                  <p className="mt-3 flex-1 leading-relaxed text-muted-foreground text-pretty">
+                    {tz("subtitle")}
+                  </p>
+                  <Link
+                    href="/quiz"
+                    className="mt-7 inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-cta px-7 text-sm font-bold text-cta-foreground shadow-lg shadow-cta/30 transition hover:brightness-105"
+                  >
+                    {tz("cta")}
+                    <ArrowRight className="size-4" />
+                  </Link>
+                  <p className="mt-3 text-xs text-muted-foreground">{tz("meta")}</p>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal className="h-full" delay={80}>
+              <div className="relative flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card px-6 py-10 text-center shadow-sm sm:px-8">
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute -top-20 left-1/2 size-56 -translate-x-1/2 rounded-full bg-primary/10 blur-3xl"
+                />
+                <div className="relative flex flex-1 flex-col">
+                  <div className="mx-auto grid size-12 place-items-center rounded-2xl bg-primary/10">
+                    <BookOpen className="size-6 text-primary" />
+                  </div>
+                  <h3 className="mt-5 text-xl font-bold">{tv("title")}</h3>
+                  <p className="mt-3 flex-1 leading-relaxed text-muted-foreground text-pretty">
+                    {tv("subtitle")}
+                  </p>
+                  <Link
+                    href="/vocab"
+                    className="mt-7 inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-border bg-background px-7 text-sm font-bold transition hover:border-ring/50"
+                  >
+                    {tv("cta")}
+                    <ArrowRight className="size-4" />
+                  </Link>
+                  <p className="mt-3 text-xs text-muted-foreground">{tv("meta")}</p>
+                </div>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 

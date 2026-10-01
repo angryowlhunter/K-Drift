@@ -240,5 +240,82 @@
         "lower": "A little more know-how would make life a lot easier"
       }
     }
+  },
+  "tests": {
+    "badge": "Just for fun",
+    "title": "Two quick tests",
+    "subtitle": "One on the information you need to live in Korea, one a light check of Korean vocabulary. Both free, and every question comes with an explanation."
+  },
+  "vocab": {
+    "badge": "Korean, for fun",
+    "title": "TOPIK Vocabulary Test",
+    "subtitle": "Levels 1 to 6 — twelve words to gauge your vocabulary",
+    "cta": "Take the word test",
+    "meta": "12 words · about 2 min · free",
+    "prompt": "What does this word mean?",
+    "levelLabel": "Level {level}",
+    "disclaimer": "TOPIK does not publish an official word list. The levels in this test are a reference, based on the graded vocabulary of the National Institute of Korean Language’s Korean Standard Curriculum — they are not an actual TOPIK score.",
+    "pos": {
+      "noun": "noun",
+      "verb": "verb",
+      "adjective": "adjective",
+      "adverb": "adverb",
+      "idiom": "idiom"
+    },
+    "start": {
+      "subtitle": "You start at level 1 and climb to level 6 — two words per level, twelve in all.",
+      "howTitle": "How it works",
+      "h1": "You move up level by level, starting easy",
+      "h2": "Pick an answer and an example sentence appears right away",
+      "h3": "At the end you see exactly which level you stalled at",
+      "button": "Start the word test"
+    },
+    "play": {
+      "correct": "That’s right!",
+      "wrong": "Not quite",
+      "next": "Next word",
+      "finish": "See results"
+    },
+    "result": {
+      "retake": "Try again",
+      "share": "Share result",
+      "shared": "Copied!",
+      "breakdownTitle": "Results by level",
+      "breakdownHint": "Seeing where you stalled tells you what to study next.",
+      "reviewTitle": "Review the ones you missed",
+      "vocabTitle": "Words from this round",
+      "subscribeTitle": "Get the words Korean life actually uses, weekly",
+      "subscribeSubtitle": "We gather the words and rules you meet in daily life, grounded in official government sources, and send them to your inbox.",
+      "levels": {
+        "l0": {
+          "name": "Just getting started",
+          "desc": "This is where it begins. Collect level 1 words one at a time."
+        },
+        "l1": {
+          "name": "Around level 1",
+          "desc": "The basics are in place. Build out from the words you use daily."
+        },
+        "l2": {
+          "name": "Around level 2",
+          "desc": "The vocabulary for everyday conversation is starting to come together."
+        },
+        "l3": {
+          "name": "Around level 3",
+          "desc": "You’ve reached the admin words — contracts, applications and the like."
+        },
+        "l4": {
+          "name": "Around level 4",
+          "desc": "You handle abstract words well. The news is becoming readable."
+        },
+        "l5": {
+          "name": "Around level 5",
+          "desc": "You’re working with the Sino-Korean words of documents and articles."
+        },
+        "l6": {
+          "name": "Around level 6",
+          "desc": "Idioms too. At this point you’re the one explaining things in Korean."
+        }
+      }
+    }
   }
 }
